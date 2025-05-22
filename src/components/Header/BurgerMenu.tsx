@@ -40,7 +40,7 @@ export const BurgerMenu = () => {
     <div className="burger-menu">
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        className='relative z-[2]'
+        className='relative z-[4]'
         aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
       >
         <BurgerIcon className={`text-white hover:text-white/65 transition-colors`} />
@@ -48,7 +48,7 @@ export const BurgerMenu = () => {
 
       <div data-open={isOpen} className={`
         fixed top-0 right-0 w-full max-w-[200px] lg:max-w-[450px] bg-blue
-        overflow-hidden z-[1] rounded-bl-[40px]
+        overflow-hidden z-[3] rounded-bl-[40px]
         transition-all duration-300 ease-in-out
         h-0 opacity-0 data-[open=true]:h-[284px] data-[open=true]:opacity-100
       `}>
