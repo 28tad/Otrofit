@@ -60,7 +60,7 @@ export const BurgerMenu = () => {
               data-active={pathname === p.href}
               className={`
                 leading-[100%] text-[24px] transition-all
-                hover:text-white/80
+                hover:text-white/50 hover:underline
                 data-[active=true]:underline
               `}
             >
