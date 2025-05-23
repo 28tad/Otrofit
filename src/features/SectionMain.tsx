@@ -2,6 +2,7 @@ import { Container } from '@/components/Container'
 import Image from 'next/image'
 import image from '@/images/section_main.webp'
 import image_mob from '@/images/section_main_mob.webp'
+import ConnectUsButton from '@/components/ConnectUsButton'
 
 export default function SectionMain() {
   return (
@@ -21,7 +22,7 @@ export default function SectionMain() {
             <p className='text-right text-[16px]'>
               Чтобы вы могли жить так, как удобно <br /> именно вам — активно, комфортно и достойно!
             </p>
-            <button className='bg-blue rounded-[28px] h-[60px] w-[240px] uppercase font-bold'>связаться с нами</button>
+            <ConnectUsButton className='rounded-[28px] h-[60px] w-[240px]' />
           </div>
         </div>
       </div>
@@ -42,7 +43,7 @@ export default function SectionMain() {
             <p className='text-[16px] text-center max-w-[283px] mx-auto my-[30px]'>
               Чтобы вы могли жить так, как удобно именно вам — активно, комфортно и достойно!
             </p>
-            <button className='bg-blue rounded-[18px] h-[60px] w-full uppercase font-bold text-white'>связаться с нами</button>
+            <ConnectUsButton className='rounded-[18px] h-[60px] w-full' />
           </div>
         </Container>
       </div>
