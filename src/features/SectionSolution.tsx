@@ -78,8 +78,8 @@ const items: ProductItem[] = [
 const Card = (item: ProductItem) => {
   return (
     <>
-      <div className='block lg:hidden size-[375px] mx-auto my-[60px]'>
-        <Image src={item.mobImg || item.img} alt='fitroller_img' className='w-full min-h-[375px] object-cover rounded-tr-[65px]' />
+      <div className='block lg:hidden w-full max-w-[560px] mx-auto my-[60px]'>
+        <Image src={item.mobImg || item.img} alt='fitroller_img' className='w-full object-cover rounded-tr-[65px]' />
       </div>
       <Container className='grid lg:grid-cols-2 lg:gap-[32px]'>
         {item.placement === 'left' && (

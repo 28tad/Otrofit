@@ -31,9 +31,7 @@ export default function SectionMain() {
         <div className='h-[210px] bg-gray rounded-b-[50px] w-full'>
           <div className='mx-[45px]'>
             <div className='w-[290px] h-[240px] bg-white rounded-t-[50px] pt-[15px] px-[15px] mx-auto'>
-              <div className='rounded-[50px]'>
-                <Image src={image_mob} alt='fitroller' className='object-fit rounded-[50px]' width={260} height={230} />
-              </div>
+              <Image src={image_mob} alt='fitroller' className='' />
             </div>
           </div>
         </div>
