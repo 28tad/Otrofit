@@ -31,14 +31,16 @@ export default function SectionMain() {
         <div className='h-[210px] bg-gray rounded-b-[50px] w-full'>
           <div className='mx-[45px]'>
             <div className='w-[290px] h-[240px] bg-white rounded-t-[50px] pt-[15px] px-[15px] mx-auto'>
-              <Image src={image_mob} alt='fitroller' className='' />
+              <Image src={image_mob} alt='fitroller' className='w-[260px] h-[230px] object-contain' />
             </div>
           </div>
         </div>
         <Container>
           <div className='mt-[65px]'>
-            <h1 className='text-gray font-bold text-[24px] uppercase text-center'>мы разрабатываем и подбираем лучшие решения на рынке</h1>
-            <p className='text-[16px] text-center max-w-[283px] mx-auto my-[30px]'>
+            <h1 className='text-gray font-bold text-[24px] uppercase text-center w-[283px] mx-auto leading-[100%]'>
+              мы разрабатываем и подбираем лучшие решения на рынке
+            </h1>
+            <p className='text-[16px] mx-auto my-[30px] w-[283px] font-light'>
               Чтобы вы могли жить так, как удобно именно вам — активно, комфортно и достойно!
             </p>
             <ConnectUsButton className='rounded-[18px] h-[60px] w-full' />

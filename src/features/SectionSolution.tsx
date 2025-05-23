@@ -38,7 +38,7 @@ const items: ProductItem[] = [
     subtitle: 'Каждое решение — это шаг к свободе движения, самостоятельности и лучшему качеству жизни',
     description: (
       <>
-        <span className='uppercase font-bold'>FitRoller</span> — тренажёр, позволяющий проводить полноценные тренировки прямо в в кресло-коляске. Он
+        <span className='font-bold'>FitRoller</span> — тренажёр, позволяющий проводить полноценные тренировки прямо в в кресло-коляске. Он
         помогает развивать силу, выносливость и координацию без необходимости посещения спортзала или помощи извне
       </>
     ),
@@ -58,7 +58,7 @@ const items: ProductItem[] = [
     subtitle: 'Мы создаём решения, которые работают на практике — там, где это действительно нужно',
     description: (
       <>
-        <span className='uppercase font-bold'>Унилифт</span> — универсальное подъёмное кресло, которое облегчает перемещение и гигиенический уход.
+        <span className='font-bold'>Унилифт</span> — универсальное подъёмное кресло, которое облегчает перемещение и гигиенический уход.
         Устройство удобно в использовании, адаптировано под разные условия и снижает нагрузку на окружающих
       </>
     ),
@@ -142,7 +142,7 @@ export default function SectionSolution() {
         </div>
       </Container>
 
-      <div className='flex flex-col lg:gap-[59px] mt-[30px] lg:mt-[59px] mb-[60px] lg:mb-[100px]'>
+      <div className='flex flex-col lg:gap-[59px] mt-[0px] lg:mt-[59px] mb-[0px] lg:mb-[100px]'>
         {items.map((item) => (
           <Card {...item} key={item.title} />
         ))}
