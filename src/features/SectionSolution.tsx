@@ -142,7 +142,7 @@ export default function SectionSolution() {
         </div>
       </Container>
 
-      <div className='flex flex-col lg:gap-[59px] mt-[0px] lg:mt-[59px] mb-[0px] lg:mb-[100px]'>
+      <div className='flex flex-col lg:gap-[59px] mt-[0px] lg:mt-[59px] mb-[0px] mb-[60px] lg:mb-[100px]'>
         {items.map((item) => (
           <Card {...item} key={item.title} />
         ))}
