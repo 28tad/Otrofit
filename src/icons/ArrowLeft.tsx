@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const ArrowLeft = ({ className }: { className?: string }) => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' width='19' height='32' viewBox='0 0 19 32' fill='none' className={className}>

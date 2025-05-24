@@ -45,7 +45,7 @@ export default function SectionOS() {
   }
 
   return (
-    <div className='relative h-[618px] lg:h-[458px] overflow-hidden mb-[200px]'>
+    <div className='relative h-[618px] lg:h-[458px] overflow-hidden'>
       <div className='absolute inset-0 -z-10'>
         <Image src={bg} alt='fitroller_bg' fill className='object-cover object-center lg:object-[center_65%] opacity-100' quality={100} priority />
         <div className='absolute inset-0 bg-black/40' />

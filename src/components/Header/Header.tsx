@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className='h-[60px] bg-gray relative'>
+    <header className='h-[60px] bg-gray relative'>
       <Container className='flex items-center h-full'>
         <div className='flex items-center justify-between w-full'>
           <Link href={frontendRoutes.main}>
@@ -15,6 +15,6 @@ export default function Header() {
           <BurgerMenu />
         </div>
       </Container>
-    </div>
+    </header>
   )
 }
