@@ -38,8 +38,8 @@ const items: ProductItem[] = [
     subtitle: 'Каждое решение — это шаг к свободе движения, самостоятельности и лучшему качеству жизни',
     description: (
       <>
-        <span className='font-bold'>FitRoller</span> — тренажёр, позволяющий проводить полноценные тренировки прямо в в кресло-коляске. Он
-        помогает развивать силу, выносливость и координацию без необходимости посещения спортзала или помощи извне
+        <span className='font-bold'>FitRoller</span> — тренажёр, позволяющий проводить полноценные тренировки прямо в в кресло-коляске. Он помогает
+        развивать силу, выносливость и координацию без необходимости посещения спортзала или помощи извне
       </>
     ),
     img: fitroller,
@@ -58,8 +58,8 @@ const items: ProductItem[] = [
     subtitle: 'Мы создаём решения, которые работают на практике — там, где это действительно нужно',
     description: (
       <>
-        <span className='font-bold'>Унилифт</span> — универсальное подъёмное кресло, которое облегчает перемещение и гигиенический уход.
-        Устройство удобно в использовании, адаптировано под разные условия и снижает нагрузку на окружающих
+        <span className='font-bold'>Унилифт</span> — универсальное подъёмное кресло, которое облегчает перемещение и гигиенический уход. Устройство
+        удобно в использовании, адаптировано под разные условия и снижает нагрузку на окружающих
       </>
     ),
     img: unilift,
@@ -97,8 +97,8 @@ const Card = (item: ProductItem) => {
           <div className='text-[14px] lg:text-[18px] font-light mt-[16px] ml-[25px] lg:ml-0  lg:mt-[30px] leading-[100%]'>{item.description}</div>
           <Carousel className='ml-[25px] lg:ml-[43px] mt-[45px] w-[281px] lg:w-[430px]' opts={{ loop: true }}>
             <CarouselContent>
-              {new Array(3).fill(item.caruselItems[0]).map((c) => (
-                <CarouselItem className='flex gap-[30px]' key={c.title}>
+              {new Array(3).fill(item.caruselItems[0]).map((c, index) => (
+                <CarouselItem className='flex gap-[30px]' key={c.title + index}>
                   <Image alt={c.title} src={c.img} className='size-[100px] lg:size-[160px] rounded-tl-[25px]' />
                   <div className='flex flex-col justify-around lg:justify-between'>
                     <div className='text-[18px] lg:text-[20px] uppercase font-bold text-gray'>{c.title}</div>

@@ -14,12 +14,12 @@ export const Input = <T extends FieldValues>({ name, register, errors, required,
   const hasError = !!errors[name]
   return (
     <div className='flex flex-col gap-[6px]'>
-      <label data-hasError={hasError} className='text-[14px] lg:text-[16px] font-normal data-[hasError=true]:text-red'>
+      <label data-haserror={hasError} className='text-[14px] lg:text-[16px] font-normal data-[haserror=true]:text-red'>
         {label} {required ? <span className='text-blue'>*</span> : null}
       </label>
       <div
-        data-hasError={hasError}
-        className='bg-white/80 text-black rounded-[16px] h-[40px] lg:h-[48px] px-[22px] flex items-center  data-[hasError=true]:border data-[hasError=true]:border-red'
+        data-haserror={hasError}
+        className='bg-white/80 text-black rounded-[16px] h-[40px] lg:h-[48px] px-[22px] flex items-center  data-[haserror=true]:border data-[haserror=true]:border-red'
       >
         <input {...register(name)} className='bg-transparent border-b-1 border-gray/30 outline-none w-full' />
       </div>

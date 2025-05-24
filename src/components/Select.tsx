@@ -45,12 +45,12 @@ export const Select = <T extends FieldValues>({ name, register, options, require
 
   return (
     <div className='flex flex-col gap-[6px] relative' ref={selectRef}>
-      <label data-hasError={hasError} className='text-[14px] lg:text-[16px] font-normal data-[hasError=true]:text-red'>
+      <label data-haserror={hasError} className='text-[14px] lg:text-[16px] font-normal data-[haserror=true]:text-red'>
         {label} {required ? <span className='text-blue'>*</span> : null}
       </label>
       <div
-        data-hasError={hasError}
-        className='bg-white/80 text-black rounded-[16px] h-[40px] lg:h-[48px] px-[22px] flex items-center cursor-pointer data-[hasError=true]:border data-[hasError=true]:border-red'
+        data-haserror={hasError}
+        className='bg-white/80 text-black rounded-[16px] h-[40px] lg:h-[48px] px-[22px] flex items-center cursor-pointer data-[haserror=true]:border data-[haserror=true]:border-red'
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className='bg-transparent outline-none w-full border-b border-gray/30 text-gray'>{selectedOption?.label || 'Выберите продукт'}</div>
