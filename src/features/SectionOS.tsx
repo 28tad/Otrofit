@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import Input from '@/components/Input'
 import bg from '@/images/section_os_bg.webp'
 import Image from 'next/image'
 
@@ -12,22 +13,32 @@ export default function SectionOS() {
 
       <Container className='h-full pt-[40px] lg:py-[40px] lg:py-[67px] text-white'>
         <div
-          className='bg-black/50 h-full rounded-t-[65px] py-[14px] px-[15px] lg:py-[45px] lg:px-[52px]'
-          style={{ backdropFilter: 'blur(52.83712387084961px)' }}
+          className='bg-black/50 h-full rounded-t-[65px] py-[14px] px-[15px] lg:py-[45px] lg:px-[52px] mx-[20px] lg:mx-0'
+          style={{ backdropFilter: 'blur(6px)' }}
         >
           <div className='uppercase font-bold text-[24px] mx-auto w-[140px] lg:w-full lg:text-[30px] leading-[110%] lg:leading-[100%] text-center'>
             связаться с нами
           </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-5 gap-[10px] lg:gap-[24px] mt-[16px] lg:mt-[20px]'>
-            <div className='bg-white/20  rounded-lg lg:col-span-2'>Элемент 1 (2 колонки)</div>
-            <div className='bg-white/20 p-4 rounded-lg lg:col-span-3'>Элемент 2 (3 колонки)</div>
+            <div className='lg:col-span-2'>
+              <Input label='ФИО' />
+            </div>
+            <div className='lg:col-span-3'>
+              <Input label='Продукты' />
+            </div>
 
-            <div className='bg-white/20 p-4 rounded-lg lg:col-span-1'>Элемент 3 (1 колонка)</div>
-            <div className='bg-white/20 p-4 rounded-lg lg:col-span-2'>Элемент 4 (2 колонки)</div>
-            <div className='bg-white/20 p-4 rounded-lg lg:col-span-1'>Элемент 5 (1 колонка)</div>
             <div className='lg:col-span-1'>
-              <button className='bg-blue h-full w-full rounded-[24px] text-[16px] uppercase font-bold'>ОТРАВИТЬ</button>
+              <Input label='Телефон' />
+            </div>
+            <div className='lg:col-span-2'>
+              <Input label='E-mail' />
+            </div>
+            <div className='lg:col-span-1'>
+              <Input label='Город' />
+            </div>
+            <div className='lg:col-span-1 flex flex-row items-end'>
+              <button className='mt-[8px] lg:mt-0 bg-blue w-full rounded-[18px] lg:rounded-[24px] text-[16px] uppercase font-bold h-[60px] lg:h-[48px]'>отправить</button>
             </div>
           </div>
         </div>
