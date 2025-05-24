@@ -49,10 +49,10 @@ export default function SectionCatalog() {
                 <Image src={i.img} alt={i.title} className='size-[87px] lg:size-[143px]' />
                 <div className='text-gray font-bold uppercase text-[16px] lg:text-[15px]'>{i.title}</div>
                 <div className='text-[14px] lg:text-[15px] text-center'>{i.description}</div>
-                <Link href='#' className='hidden lg:flex bg-blue size-[60px] items-center justify-center rounded-[100%]'>
+                <Link href={i.href} className='hidden lg:flex bg-blue size-[60px] items-center justify-center rounded-[100%]'>
                   <ArrowRight />
                 </Link>
-                <Link href='#' className='absolute lg:hidden bottom-[-30px] flex bg-blue size-[60px] items-center justify-center rounded-[100%]'>
+                <Link href={i.href} className='absolute lg:hidden bottom-[-30px] flex bg-blue size-[60px] items-center justify-center rounded-[100%]'>
                   <ArrowRight />
                 </Link>
               </div>
