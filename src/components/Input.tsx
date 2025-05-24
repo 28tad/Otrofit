@@ -12,7 +12,6 @@ interface InputProps<T extends FieldValues> {
 
 export const Input = <T extends FieldValues>({ name, register, errors, required, label }: InputProps<T>) => {
   const hasError = !!errors[name]
-
   return (
     <div className='flex flex-col gap-[6px]'>
       <label data-hasError={hasError} className='text-[14px] lg:text-[16px] font-normal data-[hasError=true]:text-red'>

@@ -6,9 +6,9 @@ export const ArrowLeft = ({ className }: { className?: string }) => {
       <path
         d='M16.0039 3.02051L2.99785 16.0266L16.0039 29.0326'
         stroke='#6169FF'
-        stroke-width='5.69015'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='5.69015'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   )

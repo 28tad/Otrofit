@@ -1,25 +1,28 @@
 'use client'
 
 import { Container } from '@/components/Container'
-import Select from '@/components/Select'
 import bg from '@/images/section_os_bg.webp'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Input } from '@/components/Input'
+import { Select } from '@/components/Select'
+import { sendTgMessage } from '@/lib/api'
+import { orderTemplate } from './TelegramTemplates.ts'
+import { toast } from 'react-toastify'
 
 const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/)
 
 const schema = z.object({
   fio: z.string().min(5, 'заполните поле'),
-  product: z.string().min(4, 'заполните поле'),
+  product: z.string().min(1, 'Выберите продукт'),
   phone: z.string().regex(phoneRegex, 'заполните поле'),
   mail: z.string().email('заполните поле'),
   city: z.string().optional(),
 })
 
-type IFormInput = z.infer<typeof schema>
+export type ContactForm = z.infer<typeof schema>
 
 export default function SectionOS() {
   const {
@@ -27,22 +30,19 @@ export default function SectionOS() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<IFormInput>({
+  } = useForm<ContactForm>({
     resolver: zodResolver(schema),
   })
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data, 'data')
+  const onSubmit: SubmitHandler<ContactForm> = async (data) => {
     try {
-      // await sendTgMessage({ message: orderTemplate(data), message_thread_id: 56 })
-      // toast.success('Успешно отправлено')
+      await sendTgMessage({ message: orderTemplate(data) })
+      toast.success('Успешно отправлено')
       reset()
-    } catch {
-      // toast.error((error as Error).message || 'Что-то пошло не так...')
+    } catch (error) {
+      toast.error((error as Error).message || 'Что-то пошло не так...')
     }
   }
-
-  console.log(errors)
 
   return (
     <div className='relative h-[618px] lg:h-[458px] overflow-hidden mb-[200px]'>
@@ -62,26 +62,30 @@ export default function SectionOS() {
 
           <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 lg:grid-cols-5 gap-[10px] lg:gap-[24px] mt-[16px] lg:mt-[20px]'>
             <div className='lg:col-span-2'>
-              <Input<IFormInput> name='fio' register={register} errors={errors} label='ФИО' required />
+              <Input<ContactForm> name='fio' register={register} errors={errors} label='ФИО' required />
             </div>
             <div className='lg:col-span-3'>
-              <Select
+              <Select<ContactForm>
                 label='Продукты'
                 options={[
-                  { value: 'fitroller', label: 'FITRoller' },
-                  { value: 'unilift', label: 'Унилифт' },
+                  { value: 'FITRoller', label: 'FITRoller' },
+                  { value: 'Унилифт', label: 'Унилифт' },
                 ]}
+                required
+                name='product'
+                register={register}
+                errors={errors}
               />
             </div>
 
             <div className='lg:col-span-1'>
-              <Input<IFormInput> name='phone' register={register} errors={errors} label='Телефон' required />
+              <Input<ContactForm> name='phone' register={register} errors={errors} label='Телефон' required />
             </div>
             <div className='lg:col-span-2'>
-              <Input<IFormInput> name='mail' register={register} errors={errors} label='E-mail' required />
+              <Input<ContactForm> name='mail' register={register} errors={errors} label='E-mail' required />
             </div>
             <div className='lg:col-span-1'>
-              <Input<IFormInput> name='city' register={register} errors={errors} label='Город' />
+              <Input<ContactForm> name='city' register={register} errors={errors} label='Город' />
             </div>
             <div className='lg:col-span-1 flex flex-row items-end'>
               <button
