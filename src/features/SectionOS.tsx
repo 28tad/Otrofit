@@ -1,5 +1,8 @@
+'use client'
+
 import { Container } from '@/components/Container'
 import Input from '@/components/Input'
+import Select from '@/components/Select'
 import bg from '@/images/section_os_bg.webp'
 import Image from 'next/image'
 
@@ -25,7 +28,14 @@ export default function SectionOS() {
               <Input label='ФИО' />
             </div>
             <div className='lg:col-span-3'>
-              <Input label='Продукты' />
+              {/* <Input label='Продукты' /> */}
+              <Select
+                label='Продукты'
+                options={[
+                  { value: 'spb', label: 'Санкт-Петербург' },
+                  { value: 'moscow', label: 'Москва' },
+                ]}
+              />
             </div>
 
             <div className='lg:col-span-1'>
@@ -38,7 +48,9 @@ export default function SectionOS() {
               <Input label='Город' />
             </div>
             <div className='lg:col-span-1 flex flex-row items-end'>
-              <button className='mt-[8px] lg:mt-0 bg-blue w-full rounded-[18px] lg:rounded-[24px] text-[16px] uppercase font-bold h-[60px] lg:h-[48px]'>отправить</button>
+              <button className='mt-[8px] lg:mt-0 bg-blue w-full rounded-[18px] lg:rounded-[24px] text-[16px] uppercase font-bold h-[60px] lg:h-[48px]'>
+                отправить
+              </button>
             </div>
           </div>
         </div>
