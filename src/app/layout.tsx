@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import { ToastContainer } from 'react-toastify'
 import Footer from '@/components/Footer/Footer'
+import SectionOS from '@/features/SectionOS'
 
 const roboto = Roboto({
   weight: ['300', '400', '700'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ToastContainer position='top-center' autoClose={2000} />
         <Header />
         {children}
+        <SectionOS />
         <Footer />
       </body>
     </html>
