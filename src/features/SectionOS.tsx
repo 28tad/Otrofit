@@ -28,12 +28,11 @@ export default function SectionOS() {
               <Input label='ФИО' />
             </div>
             <div className='lg:col-span-3'>
-              {/* <Input label='Продукты' /> */}
               <Select
                 label='Продукты'
                 options={[
-                  { value: 'spb', label: 'Санкт-Петербург' },
-                  { value: 'moscow', label: 'Москва' },
+                  { value: 'fitroller', label: 'FITRoller' },
+                  { value: 'unilift', label: 'Унилифт' },
                 ]}
               />
             </div>
