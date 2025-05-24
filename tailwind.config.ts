@@ -11,6 +11,7 @@ export default {
         blue: '#6169FF',
         white: '#FFFFFF',
         light: '#F5F5F5',
+        red: '#FF0000',
       },
       fontFamily: {
         sans: ['Arial', 'Helvetica', 'sans-serif'],
