@@ -103,7 +103,7 @@ const Card = (item: ProductItem) => {
                   <div className='flex flex-col justify-around lg:justify-between'>
                     <div className='text-[18px] lg:text-[20px] uppercase font-bold text-gray'>{c.title}</div>
                     <div className='text-[18px] text-blue lg:text-[26px] font-bold italic'>{c.price}</div>
-                    <ConnectUsButton className='hidden lg:block lg:w-[239px] lg:h-[59px] rounded-[28px]' />
+                    <ConnectUsButton className='hidden lg:block' />
                   </div>
                 </CarouselItem>
               ))}

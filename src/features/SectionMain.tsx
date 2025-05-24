@@ -7,6 +7,7 @@ import ConnectUsButton from '@/components/ConnectUsButton'
 export default function SectionMain() {
   return (
     <>
+      {/* desktop */}
       <div className='hidden lg:grid grid-cols-2 max-w-[1920px] mx-auto h-[540px] text-white bg-gray'>
         <div className='bg-white rounded-tr-[50px] lg:pt-[34px] lg:pr-[25px]'>
           <Image src={image} alt='fitroller' className='max-h-[500px]' />
@@ -22,11 +23,12 @@ export default function SectionMain() {
             <p className='text-right text-[16px]'>
               Чтобы вы могли жить так, как удобно <br /> именно вам — активно, комфортно и достойно!
             </p>
-            <ConnectUsButton className='rounded-[28px] h-[60px] w-[240px]' />
+            <ConnectUsButton />
           </div>
         </div>
       </div>
 
+      {/* mobile */}
       <div className='block lg:hidden'>
         <div className='h-[210px] bg-gray rounded-b-[50px] w-full'>
           <div className='mx-[45px]'>
@@ -43,7 +45,7 @@ export default function SectionMain() {
             <p className='text-[16px] mx-auto my-[30px] w-[283px] font-light'>
               Чтобы вы могли жить так, как удобно именно вам — активно, комфортно и достойно!
             </p>
-            <ConnectUsButton className='rounded-[18px] h-[60px] w-full' />
+            <ConnectUsButton />
           </div>
         </Container>
       </div>

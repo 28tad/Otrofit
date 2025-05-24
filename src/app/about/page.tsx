@@ -5,6 +5,7 @@ import bg from '@/images/section_about.webp'
 import Image from 'next/image'
 import left_chair from '@/images/left_chair.webp'
 import right_chair from '@/images/right_chair.webp'
+import { Metadata } from 'next'
 
 const FirstContent = () => {
   return (
@@ -35,6 +36,11 @@ const values = [
   'Поддержка на каждом этапе — от консультации до внедрения',
   'Решения, ориентированные на результат',
 ]
+
+export const metadata: Metadata = {
+  title: 'Ортофит | О нас',
+  description: 'Ортофит - разработка реабилитационного оборудования: тренажёр FITRoller для инвалидных колясок, подъёмное кресло Унилифт. Решения для активной реабилитации, ухода за маломобильными пациентами, адаптивной физкультуры. Профессиональные подъёмники, кресла-туалеты, тренажёры для ЛФК. Доставка по России, поддержка пользователей, оборудование для домов престарелых и медицинских центров.'
+}
 
 export default function About() {
   return (
