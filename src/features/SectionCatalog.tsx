@@ -44,7 +44,7 @@ export default function SectionCatalog() {
             return (
               <div
                 key={i.title}
-                className='relative bg-light h-[272px] w-[155px] lg:h-[415px] lg:w-[250px] rounded-t-[25px] lg:rounded-t-[50px] rounded-bl-[25px] lg:rounded-bl-[50px] pt-[15px] pb-[42px] lg:py-[44px] lg:px-[45px] flex flex-col gap-[18px] lg:gap-[23px] justify-center items-center'
+                className='relative bg-light h-[272px] w-[155px] lg:h-[450px] lg:w-[250px] rounded-t-[25px] lg:rounded-t-[50px] rounded-bl-[25px] lg:rounded-bl-[50px] pt-[15px] pb-[42px] lg:py-[44px] lg:px-[45px] flex flex-col gap-[18px] lg:gap-[23px] justify-center items-center'
               >
                 <Image src={i.img} alt={i.title} className='size-[87px] lg:size-[143px]' />
                 <div className='text-gray font-bold uppercase text-[16px] lg:text-[15px]'>{i.title}</div>

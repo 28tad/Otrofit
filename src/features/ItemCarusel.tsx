@@ -32,7 +32,7 @@ export function ItemCarusel({ items }: { items: StaticImageData[] }) {
   return (
     <>
       {/* main slide */}
-      <div className='flex h-[340px] w-[340px] lg:w-[520px] lg:h-[440px] flex items-center justify-center rounded-tl-[65px] mx-auto'>
+      <div className='flex h-[340px] w-[340px] lg:w-[520px] lg:h-[440px] flex items-center justify-center rounded-tl-[65px] mx-auto bg-blue'>
         {slides[current] && <Image src={slides[current]} alt='slide_img' className='h-full lg:max-h-[440px] w-fit' width={520} height={440} />}
       </div>
       {slides.length === 1 && (
