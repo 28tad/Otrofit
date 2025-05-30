@@ -10,7 +10,6 @@ import { Input } from '@/components/Input'
 import { Select } from '@/components/Select'
 import { sendTgMessage } from '@/lib/api'
 import { orderTemplate } from './TelegramTemplates.ts'
-import { toast } from 'react-toastify'
 
 const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/)
 
@@ -35,6 +34,7 @@ export default function SectionOS() {
   })
 
   const onSubmit: SubmitHandler<ContactForm> = async (data) => {
+    const { toast } = await import('react-toastify')
     try {
       await sendTgMessage({ message: orderTemplate(data) })
       toast.success('Успешно отправлено')
