@@ -1,14 +1,38 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
+import next from '@next/eslint-plugin-next'
+import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+import path from 'path'
+import { fileURLToPath } from 'url'
+import reactHooks from 'eslint-plugin-react-hooks'
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  baseDirectory: path.dirname(fileURLToPath(import.meta.url)),
 })
 
-const eslintConfig = [...compat.extends('next/core-web-vitals', 'next/typescript')]
-
-export default eslintConfig
+export default [
+  js.configs.recommended,
+  ...compat.config({
+    extends: [
+      'plugin:@typescript-eslint/recommended',
+      'plugin:@typescript-eslint/stylistic',
+    ],
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+    },
+  }),
+  {
+    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    plugins: {
+      '@next/next': next,
+      'react-hooks': reactHooks,
+    },
+    rules: {
+      ...next.configs.recommended.rules,
+      ...next.configs['core-web-vitals'].rules,
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+  },
+  {
+    ignores: ['.next/**', 'node_modules/**'],
+  },
+]
