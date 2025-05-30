@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react'
 
 export function ItemCarusel({ items }: { items: StaticImageData[] }) {
   const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState<number>(0)
   const [slides, setSlides] = useState<StaticImageData[]>([])
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function ItemCarusel({ items }: { items: StaticImageData[] }) {
     } else {
       setSlides(items)
     }
-  }, [])
+  }, [items])
 
   useEffect(() => {
     if (!api) {
