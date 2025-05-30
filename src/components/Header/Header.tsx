@@ -6,11 +6,11 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className='h-[60px] bg-gray relative'>
-      <Container className='flex items-center h-full'>
-        <div className='flex items-center justify-between w-full'>
+    <header className='bg-gray relative h-[60px]'>
+      <Container className='flex h-full items-center'>
+        <div className='flex w-full items-center justify-between'>
           <Link href={frontendRoutes.main}>
-            <Logo className='h-[28px] w-[88px] lg:w-[115px] lg:h-[37px]' />
+            <Logo className='h-[28px] w-[88px] lg:h-[37px] lg:w-[115px]' />
           </Link>
           <BurgerMenu />
         </div>

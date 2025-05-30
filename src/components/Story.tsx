@@ -6,9 +6,11 @@ interface Props extends PropsWithChildren {
 
 export const Story = ({ title, children }: Props) => {
   return (
-    <div className='bg-blue px-[7px] lg:px-[14px] rounded-[15px] lg:rounded-[24px]'>
-      {title && <div className='font-bold text-[16px] lg:text-[18px]'>{title}</div>}
-      <div className='bg-light px-[11px] lg:px-[27px] font-light text-[16px] lg:text-[18px] py-[8px] lg:py-[15px]'>{children}</div>
+    <div className='bg-blue rounded-[15px] px-[7px] lg:rounded-[24px] lg:px-[14px]'>
+      {title && <div className='text-[16px] font-bold lg:text-[18px]'>{title}</div>}
+      <div className='bg-light px-[11px] py-[8px] text-[16px] font-light lg:px-[27px] lg:py-[15px] lg:text-[18px]'>
+        {children}
+      </div>
     </div>
   )
 }

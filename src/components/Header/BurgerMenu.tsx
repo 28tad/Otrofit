@@ -21,7 +21,6 @@ export const BurgerMenu = () => {
     setIsOpen(false)
   }, [pathname])
 
-
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement
@@ -37,32 +36,26 @@ export const BurgerMenu = () => {
   }, [isOpen])
 
   return (
-    <div className="burger-menu">
-      <button 
-        onClick={() => setIsOpen(!isOpen)} 
+    <div className='burger-menu'>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
         className='relative z-[4]'
         aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
       >
-        <BurgerIcon className={`text-white hover:text-white/65 transition-colors`} />
+        <BurgerIcon className={`text-white transition-colors hover:text-white/65`} />
       </button>
 
-      <div data-open={isOpen} className={`
-        fixed top-0 right-0 w-full max-w-[200px] lg:max-w-[450px] bg-blue
-        overflow-hidden z-[3] rounded-bl-[40px]
-        transition-all duration-300 ease-in-out
-        h-0 opacity-0 data-[open=true]:h-[284px] data-[open=true]:opacity-100
-      `}>
-        <div className='text-white pl-[26px] pt-[71px] lg:pl-[40px] lg:pt-[74px] flex flex-col gap-[15px]'>
+      <div
+        data-open={isOpen}
+        className={`bg-blue fixed top-0 right-0 z-[3] h-0 w-full max-w-[200px] overflow-hidden rounded-bl-[40px] opacity-0 transition-all duration-300 ease-in-out data-[open=true]:h-[284px] data-[open=true]:opacity-100 lg:max-w-[450px]`}
+      >
+        <div className='flex flex-col gap-[15px] pt-[71px] pl-[26px] text-white lg:pt-[74px] lg:pl-[40px]'>
           {pages.map((p) => (
-            <Link 
-              key={p.href} 
+            <Link
+              key={p.href}
               href={p.href}
               data-active={pathname === p.href}
-              className={`
-                leading-[100%] text-[24px] transition-all
-                hover:text-white/50 hover:underline
-                data-[active=true]:underline
-              `}
+              className={`text-[24px] leading-[100%] transition-all hover:text-white/50 hover:underline data-[active=true]:underline`}
             >
               {p.title}
             </Link>

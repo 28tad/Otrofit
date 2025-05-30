@@ -36,23 +36,31 @@ const items = [
 export default function SectionCatalog() {
   return (
     <div className='relative'>
-      <Image src={left_chair} alt='left_chair_bg' className='hidden lg:block absolute z-[-1]' />
-      <Container className='mt-[48px] lg:mt-[150px] mb-[90px] lg:mb-[73px]'>
-        <div className='text-center uppercase text-[24px] lg:text-[36px] font-bold'>каталог</div>
-        <div className='flex gap-[24px] justify-center mt-[30px] lg:mt-[60px]'>
+      <Image src={left_chair} alt='left_chair_bg' className='absolute z-[-1] hidden lg:block' />
+      <Container className='mt-[48px] mb-[90px] lg:mt-[150px] lg:mb-[73px]'>
+        <div className='text-center text-[24px] font-bold uppercase lg:text-[36px]'>каталог</div>
+        <div className='mt-[30px] flex justify-center gap-[24px] lg:mt-[60px]'>
           {items.map((i) => {
             return (
               <div
                 key={i.title}
-                className='relative bg-light h-[272px] w-[155px] lg:h-[450px] lg:w-[250px] rounded-t-[25px] lg:rounded-t-[50px] rounded-bl-[25px] lg:rounded-bl-[50px] pt-[15px] pb-[42px] lg:py-[44px] lg:px-[45px] flex flex-col gap-[18px] lg:gap-[23px] justify-center items-center'
+                className='bg-light relative flex h-[272px] w-[155px] flex-col items-center justify-center gap-[18px] rounded-t-[25px] rounded-bl-[25px] pt-[15px] pb-[42px] lg:h-[450px] lg:w-[250px] lg:gap-[23px] lg:rounded-t-[50px] lg:rounded-bl-[50px] lg:px-[45px] lg:py-[44px]'
               >
                 <Image src={i.img} alt={i.title} className='size-[87px] lg:size-[143px]' />
-                <div className='text-gray font-bold uppercase text-[16px] lg:text-[15px]'>{i.title}</div>
-                <div className='text-[14px] lg:text-[15px] text-center'>{i.description}</div>
-                <Link href={i.href} className='hidden lg:flex bg-blue size-[60px] items-center justify-center rounded-[100%]'>
+                <div className='text-gray text-[16px] font-bold uppercase lg:text-[15px]'>
+                  {i.title}
+                </div>
+                <div className='text-center text-[14px] lg:text-[15px]'>{i.description}</div>
+                <Link
+                  href={i.href}
+                  className='bg-blue hidden size-[60px] items-center justify-center rounded-[100%] lg:flex'
+                >
                   <ArrowRight />
                 </Link>
-                <Link href={i.href} className='absolute lg:hidden bottom-[-30px] flex bg-blue size-[60px] items-center justify-center rounded-[100%]'>
+                <Link
+                  href={i.href}
+                  className='bg-blue absolute bottom-[-30px] flex size-[60px] items-center justify-center rounded-[100%] lg:hidden'
+                >
                   <ArrowRight />
                 </Link>
               </div>
@@ -60,7 +68,11 @@ export default function SectionCatalog() {
           })}
         </div>
       </Container>
-      <Image src={right_chair} alt='right_chair_bg' className='hidden lg:block absolute bottom-[-455px] right-0 z-[-1]' />
+      <Image
+        src={right_chair}
+        alt='right_chair_bg'
+        className='absolute right-0 bottom-[-455px] z-[-1] hidden lg:block'
+      />
     </div>
   )
 }

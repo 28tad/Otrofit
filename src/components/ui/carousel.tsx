@@ -41,13 +41,21 @@ function useCarousel() {
   return context
 }
 
-function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className, children, ...props }: React.ComponentProps<'div'> & CarouselProps) {
+function Carousel({
+  orientation = 'horizontal',
+  opts,
+  setApi,
+  plugins,
+  className,
+  children,
+  ...props
+}: React.ComponentProps<'div'> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
     {
       ...opts,
       axis: orientation === 'horizontal' ? 'x' : 'y',
     },
-    plugins
+    plugins,
   )
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(false)
@@ -76,7 +84,7 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
         scrollNext()
       }
     },
-    [scrollPrev, scrollNext]
+    [scrollPrev, scrollNext],
   )
 
   React.useEffect(() => {
@@ -127,7 +135,10 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
 
   return (
     <div ref={carouselRef} className='overflow-hidden' data-slot='carousel-content'>
-      <div className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)} {...props} />
+      <div
+        className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
+        {...props}
+      />
     </div>
   )
 }
@@ -140,13 +151,22 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
       role='group'
       aria-roledescription='slide'
       data-slot='carousel-item'
-      className={cn('min-w-0 shrink-0 grow-0 basis-full', orientation === 'horizontal' ? 'pl-4' : 'pt-4', className)}
+      className={cn(
+        'min-w-0 shrink-0 grow-0 basis-full',
+        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        className,
+      )}
       {...props}
     />
   )
 }
 
-function CarouselPrevious({ className, variant = 'ghost', size = 'icon', ...props }: React.ComponentProps<typeof Button>) {
+function CarouselPrevious({
+  className,
+  variant = 'ghost',
+  size = 'icon',
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
@@ -156,20 +176,27 @@ function CarouselPrevious({ className, variant = 'ghost', size = 'icon', ...prop
       size={size}
       className={cn(
         'absolute size-8 rounded-full',
-        orientation === 'horizontal' ? 'top-1/2 -left-[40px] lg:-left-[60px] -translate-y-1/2' : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
-        className
+        orientation === 'horizontal'
+          ? 'top-1/2 -left-[40px] -translate-y-1/2 lg:-left-[60px]'
+          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+        className,
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className='w-[16px] h-[20px] lg:w-[20px] lg:h-[35px]' />
+      <ArrowLeft className='h-[20px] w-[16px] lg:h-[35px] lg:w-[20px]' />
       <span className='sr-only'>Previous slide</span>
     </Button>
   )
 }
 
-function CarouselNext({ className, variant = 'ghost', size = 'icon', ...props }: React.ComponentProps<typeof Button>) {
+function CarouselNext({
+  className,
+  variant = 'ghost',
+  size = 'icon',
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
@@ -179,14 +206,16 @@ function CarouselNext({ className, variant = 'ghost', size = 'icon', ...props }:
       size={size}
       className={cn(
         'absolute size-8 rounded-full',
-        orientation === 'horizontal' ? 'top-1/2 -right-[40px] lg:-right-[60px] -translate-y-1/2' : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
-        className
+        orientation === 'horizontal'
+          ? 'top-1/2 -right-[40px] -translate-y-1/2 lg:-right-[60px]'
+          : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+        className,
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className='w-[16px] h-[20px] lg:w-[20px] lg:h-[35px]' />
+      <ArrowRight className='h-[20px] w-[16px] lg:h-[35px] lg:w-[20px]' />
       <span className='sr-only'>Next slide</span>
     </Button>
   )

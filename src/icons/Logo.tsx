@@ -1,6 +1,13 @@
 export const Logo = ({ className }: { className?: string }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='185' height='61' viewBox='0 0 185 61' fill='none' className={className}>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='185'
+      height='61'
+      viewBox='0 0 185 61'
+      fill='none'
+      className={className}
+    >
       <g clipPath='url(#clip0_132_282)'>
         <path
           fillRule='evenodd'

@@ -14,34 +14,51 @@ export default function Footer() {
     >
       <Container className='py-[69px] lg:py-[56px]'>
         <div>
-          <Logo className='w-[88px] h-[28px] lg:w-[115px] lg:h-[37px] mx-auto lg:mx-0' />
-          <div className='mt-[60px] lg:mt-[55px] grid grid-cols-1 lg:grid-cols-3 max-w-[240px] mx-auto lg:max-w-full'>
+          <Logo className='mx-auto h-[28px] w-[88px] lg:mx-0 lg:h-[37px] lg:w-[115px]' />
+          <div className='mx-auto mt-[60px] grid max-w-[240px] grid-cols-1 lg:mt-[55px] lg:max-w-full lg:grid-cols-3'>
             <div>
-              <div className='text-[20px] uppercase text-blue font-bold'>контакты</div>
-              <div className='mt-[8px] lg:mt-[18px] text-white'>
-                <div className='flex gap-[11px] items-center '>
+              <div className='text-blue text-[20px] font-bold uppercase'>контакты</div>
+              <div className='mt-[8px] text-white lg:mt-[18px]'>
+                <div className='flex items-center gap-[11px]'>
                   <PhoneIcon />
                   {contacts.number}
                 </div>
-                <div className='flex gap-[11px] items-center'>
+                <div className='flex items-center gap-[11px]'>
                   <MailIcon />
                   {contacts.mail}
                 </div>
               </div>
             </div>
             <div className='col-span-2'>
-              <div className='mt-[60px] lg:mt-0 text-[20px] uppercase text-blue font-bold'>ссылки</div>
-              <div className='mt-[8px] lg:mt-[18px] text-white grid grid-cols-1 lg:grid-cols-2 gap-[8px]'>
-                <Link href={frontendRoutes.main} className='pb-[8px] border-b border-white/30 max-w-[212px]'>Главная страница</Link>
-                <Link href={frontendRoutes.unilift} className='pb-[8px] border-b border-white/30 max-w-[212px]'>Унилифт</Link>
-                <Link href={frontendRoutes.about} className='pb-[8px] border-b lg:border-none border-white/30 max-w-[212px]'>О нас</Link>
+              <div className='text-blue mt-[60px] text-[20px] font-bold uppercase lg:mt-0'>
+                ссылки
+              </div>
+              <div className='mt-[8px] grid grid-cols-1 gap-[8px] text-white lg:mt-[18px] lg:grid-cols-2'>
+                <Link
+                  href={frontendRoutes.main}
+                  className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                >
+                  Главная страница
+                </Link>
+                <Link
+                  href={frontendRoutes.unilift}
+                  className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                >
+                  Унилифт
+                </Link>
+                <Link
+                  href={frontendRoutes.about}
+                  className='max-w-[212px] border-b border-white/30 pb-[8px] lg:border-none'
+                >
+                  О нас
+                </Link>
                 <Link href={frontendRoutes.fitRoller}>FitRoller</Link>
               </div>
             </div>
           </div>
         </div>
       </Container>
-      <div className='h-[37px] w-full bg-gray'></div>
+      <div className='bg-gray h-[37px] w-full'></div>
     </footer>
   )
 }
