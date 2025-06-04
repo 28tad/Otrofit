@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className='bg-gray relative h-[60px]'>
+    <header className='bg-gray relative sticky top-0 z-[20] h-[60px]'>
       <Container className='flex h-full items-center'>
         <div className='flex w-full items-center justify-between'>
           <Link href={frontendRoutes.main}>

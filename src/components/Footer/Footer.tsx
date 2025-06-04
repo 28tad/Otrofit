@@ -12,7 +12,7 @@ export default function Footer() {
         background: 'linear-gradient(180deg, #34353A 32.44%, #1D1D1D 100%)',
       }}
     >
-      <Container className='py-[69px] lg:py-[56px]'>
+      <Container className='py-[69px] lg:py-[66px]'>
         <div>
           <Logo className='mx-auto h-[28px] w-[88px] lg:mx-0 lg:h-[37px] lg:w-[115px]' />
           <div className='mx-auto mt-[60px] grid max-w-[240px] grid-cols-1 lg:mt-[55px] lg:max-w-full lg:grid-cols-3'>
