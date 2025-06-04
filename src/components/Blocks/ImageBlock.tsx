@@ -6,11 +6,7 @@ export default function ImageBlock(props: ImageBlock) {
   const { src, alt, title, className } = props
   return (
     <>
-      {title && (
-        <div className='pt-[60px] pb-[16px] text-[20px] font-bold uppercase lg:pt-[24px] lg:pb-[30px]'>
-          {title}
-        </div>
-      )}
+      {title && <div className='text-[20px] font-bold uppercase'>{title}</div>}
       <div className='mt-[16px] mb-[67px] flex justify-center lg:mt-[38px] lg:mb-[72px]'>
         <Image
           src={src}

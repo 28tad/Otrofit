@@ -5,6 +5,10 @@ export const contacts = {
   mail: 'Info@gmail.com',
 }
 
+export const anchors = {
+  os: 'os',
+}
+
 export const frontendRoutes = {
   main: '/',
   unilift: `/${EQUIPMENT_KEYS.UNILIFT}`,

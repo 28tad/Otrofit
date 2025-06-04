@@ -7,10 +7,8 @@ interface Props extends PropsWithChildren {
 export const Paragraph = ({ children, title }: Props) => {
   return (
     <>
-      {title && (
-        <div className='mt-[60px] text-[20px] font-bold uppercase lg:mt-[120px]'>{title}</div>
-      )}
-      <div className='py-[16px] text-[16px] font-light lg:py-[30px] lg:text-[18px]'>{children}</div>
+      {title && <div className='text-[20px] font-bold uppercase'>{title}</div>}
+      <div className='text-[16px] font-light lg:text-[18px]'>{children}</div>
     </>
   )
 }

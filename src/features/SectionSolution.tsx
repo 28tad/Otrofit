@@ -133,7 +133,7 @@ const Card = (item: ProductItem) => {
                     <div className='text-blue text-[18px] font-bold italic lg:text-[26px]'>
                       {c.price}
                     </div>
-                    <ConnectUsButton className='hidden lg:block' />
+                    <ConnectUsButton className='hidden lg:flex' />
                   </div>
                 </CarouselItem>
               ))}

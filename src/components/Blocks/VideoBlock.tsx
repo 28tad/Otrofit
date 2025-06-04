@@ -1,6 +1,6 @@
 export default function VideoBlock() {
   return (
-    <div className='py-[60px] lg:pt-[60px] lg:pb-[100px]'>
+    <div className='pb-[30px] lg:pb-[70px]'>
       <div className='block pb-[16px] text-[20px] font-medium uppercase lg:hidden'>
         Видео-отзывы
       </div>
