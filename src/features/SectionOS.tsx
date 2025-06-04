@@ -45,7 +45,7 @@ export default function SectionOS() {
   }
 
   return (
-    <div className='relative h-[618px] overflow-hidden lg:h-[458px]'>
+    <div className='relative h-[618px] overflow-hidden lg:h-[458px]' id='#faq'>
       <div className='absolute inset-0 -z-10'>
         <Image
           src={bg}

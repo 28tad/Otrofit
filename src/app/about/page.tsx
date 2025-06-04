@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import { Story } from '@/components/Story'
+import { Story } from '@/components/Blocks/Story'
 import bg_mob from '@/images/section_about_mob.webp'
 import bg from '@/images/section_about.webp'
 import Image from 'next/image'

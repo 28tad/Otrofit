@@ -1,3 +1,5 @@
+import { EQUIPMENT_KEYS } from '@/equipmentData'
+
 export const contacts = {
   number: '+7 495 797 08 31',
   mail: 'Info@gmail.com',
@@ -5,7 +7,7 @@ export const contacts = {
 
 export const frontendRoutes = {
   main: '/',
-  unilift: '/unilift',
-  fitRoller: '/fitRoller',
+  unilift: `/${EQUIPMENT_KEYS.UNILIFT}`,
+  fitRoller: `/${EQUIPMENT_KEYS.FITROLLER}`,
   about: '/about',
 }

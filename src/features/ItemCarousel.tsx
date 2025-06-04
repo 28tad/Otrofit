@@ -11,11 +11,14 @@ import {
 import Image, { StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 
-export function ItemCarusel({ items }: { items: StaticImageData[] }) {
+interface ItemCarouselProps {
+  items: { url: StaticImageData; alt?: string }[]
+}
+
+export function ItemCarousel({ items }: { items: ItemCarouselProps['items'] }) {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState<number>(0)
-  const [slides, setSlides] = useState<StaticImageData[]>([])
-
+  const [slides, setSlides] = useState<ItemCarouselProps['items']>([])
   useEffect(() => {
     if (items.length <= 4 && items.length !== 1) {
       setSlides([...items, ...items])
@@ -42,8 +45,8 @@ export function ItemCarusel({ items }: { items: StaticImageData[] }) {
       <div className='mx-auto flex h-[340px] w-[340px] items-center justify-center rounded-tl-[65px] lg:h-[440px] lg:w-[520px]'>
         {slides[current] && (
           <Image
-            src={slides[current]}
-            alt='slide_img'
+            src={slides[current].url}
+            alt={slides[current].alt || 'slide_img'}
             className='h-full w-fit lg:max-h-[440px]'
             width={520}
             height={440}
@@ -52,7 +55,11 @@ export function ItemCarusel({ items }: { items: StaticImageData[] }) {
       </div>
       {slides.length === 1 && (
         <div className='bg-gray block flex h-[183px] w-[165px] items-center justify-center p-[10px] lg:hidden'>
-          <Image src={slides[current]} alt='slide_img' className='max-h-[183px] w-fit' />
+          <Image
+            src={slides[current].url}
+            alt={slides[current].alt || 'slide_img'}
+            className='max-h-[183px] w-fit'
+          />
         </div>
       )}
       {slides.length > 1 && (
@@ -73,8 +80,8 @@ export function ItemCarusel({ items }: { items: StaticImageData[] }) {
                   className='flex size-[70px] items-center justify-center rounded-tl-[15px] lg:size-[120px] lg:rounded-tl-[24px]'
                 >
                   <Image
-                    src={item}
-                    alt={`carusel_item_${index}`}
+                    src={item.url}
+                    alt={slides[current].alt || `carusel_item_${index}`}
                     className='size-[70px] lg:size-[120px]'
                   />
                 </div>
