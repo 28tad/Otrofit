@@ -7,10 +7,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Input } from '@/components/Input'
-import { Select } from '@/components/Select'
 import { sendTgMessage } from '@/lib/api'
 import { orderTemplate } from './TelegramTemplates.ts'
 import { anchors } from '@/app/links'
+import { Select } from '@/components/Select/Select'
+import { cityOptions } from '@/components/Select/cityOptions'
 
 const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/)
 
@@ -29,6 +30,7 @@ export default function SectionOS() {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<ContactForm>({
     resolver: zodResolver(schema),
@@ -39,7 +41,9 @@ export default function SectionOS() {
     try {
       await sendTgMessage({ message: orderTemplate(data) })
       toast.success('Успешно отправлено')
-      reset()
+      reset({
+        city: '',
+      })
     } catch (error) {
       toast.error((error as Error).message || 'Что-то пошло не так...')
     }
@@ -83,14 +87,14 @@ export default function SectionOS() {
             </div>
             <div className='lg:col-span-3'>
               <Select<ContactForm>
+                name='product'
+                control={control}
                 label='Продукты'
+                required
                 options={[
                   { value: 'FITRoller', label: 'FITRoller' },
                   { value: 'Унилифт', label: 'Унилифт' },
                 ]}
-                required
-                name='product'
-                register={register}
                 errors={errors}
               />
             </div>
@@ -114,7 +118,14 @@ export default function SectionOS() {
               />
             </div>
             <div className='lg:col-span-1'>
-              <Input<ContactForm> name='city' register={register} errors={errors} label='Город' />
+              <Select<ContactForm>
+                name='city'
+                control={control}
+                label='Город'
+                options={cityOptions}
+                errors={errors}
+                isCreatable
+              />
             </div>
             <div className='flex flex-row items-end lg:col-span-1'>
               <button
