@@ -53,7 +53,12 @@ export default function About() {
       {/* desktop block */}
       <div className='mx-auto hidden max-h-[500px] max-w-[1920px] grid-cols-2 lg:grid'>
         <div className='lg:pr-[32px]'>
-          <Image src={bg} alt='fitroller' className='max-h-[500px] rounded-br-[50px]' />
+          <Image
+            src={bg}
+            alt='fitroller'
+            className='max-h-[500px] rounded-br-[50px]'
+            loading='lazy'
+          />
         </div>
         <div className='relative flex justify-center pr-[62px]'>
           <FirstContent />
@@ -101,6 +106,7 @@ export default function About() {
           src={left_chair}
           alt='left_chair_bg'
           className='absolute top-[-188px] z-[-1] hidden lg:block'
+          loading='lazy'
         />
         <Container>
           <h2 className='my-[60px] text-center text-[24px] font-bold uppercase lg:text-[36px]'>
@@ -148,6 +154,7 @@ export default function About() {
           src={right_chair}
           alt='right_chair_bg'
           className='absolute right-0 bottom-[-285px] z-[-1] hidden lg:block'
+          loading='lazy'
         />
       </div>
 

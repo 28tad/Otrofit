@@ -18,6 +18,7 @@ export default function Equipment({ data }: Props) {
         src={left_chair}
         alt='left_chair_bg'
         className='absolute top-[714px] z-[-1] hidden lg:block'
+        loading='lazy'
       />
       <Container>
         <div className='pt-[34px] text-[24px] font-bold uppercase lg:pt-[67px] lg:text-[36px]'>
@@ -34,6 +35,7 @@ export default function Equipment({ data }: Props) {
         src={right_chair}
         alt='right_chair_bg'
         className='absolute top-[1187px] right-0 z-[-1] hidden lg:block'
+        loading='lazy'
       />
     </div>
   )
