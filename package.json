@@ -33,6 +33,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.4",
+    "react-phone-number-input": "^3.4.12",
     "react-select": "^5.10.1",
     "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.3.0",

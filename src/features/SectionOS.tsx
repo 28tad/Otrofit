@@ -12,13 +12,12 @@ import { orderTemplate } from './TelegramTemplates.ts'
 import { anchors } from '@/app/links'
 import { Select } from '@/components/Select/Select'
 import { cityOptions } from '@/components/Select/cityOptions'
-
-const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/)
+import { PhoneInputField } from '@/components/PhoneInput'
 
 const schema = z.object({
   fio: z.string().min(5, 'заполните поле'),
-  product: z.string().min(1, 'Выберите продукт'),
-  phone: z.string().regex(phoneRegex, 'заполните поле'),
+  product: z.string().min(7, 'Выберите продукт'),
+  phone: z.string().min(10, 'заполните поле'),
   mail: z.string().email('заполните поле'),
   city: z.string().optional(),
 })
@@ -100,9 +99,9 @@ export default function SectionOS() {
             </div>
 
             <div className='lg:col-span-1'>
-              <Input<ContactForm>
+              <PhoneInputField<ContactForm>
                 name='phone'
-                register={register}
+                control={control}
                 errors={errors}
                 label='Телефон'
                 required

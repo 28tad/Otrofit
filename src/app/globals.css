@@ -12,6 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
+input.PhoneInputInput {
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
