@@ -37,6 +37,7 @@ interface ListBlock extends BaseBlock {
 }
 interface VideoBlock extends BaseBlock {
   type: 'video'
+  videoLink?: string
 }
 
 export interface ImageBlock extends BaseBlock {

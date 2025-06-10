@@ -16,7 +16,7 @@ export const Constructor: React.FC<{ block: Block }> = ({ block }) => {
     case 'image':
       return <ImageBlock {...block} />
     case 'video':
-      return <VideoBlock />
+      return <VideoBlock link={block.videoLink} />
     case 'story':
       return <Story title={block.title}>{block.content}</Story>
     case 'slider':
