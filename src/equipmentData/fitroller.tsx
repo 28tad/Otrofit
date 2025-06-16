@@ -155,6 +155,7 @@ export const fitRoller: Equipment = {
     },
     {
       type: 'video',
+      videoLink: 'https://rutube.ru/video/32a7df2da889e276f6f25d7d41a98ea9/',
     },
   ],
 }

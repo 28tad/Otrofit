@@ -1,3 +1,8 @@
+function getVideoIdFromLink(link: string) {
+  const match = link.match(/\/video\/([a-f0-9]+)/)
+  return match ? match[1] : ''
+}
+
 export default function VideoBlock({ link }: { link?: string }) {
   return (
     <div className='pb-[30px] lg:pb-[70px]'>
@@ -9,9 +14,11 @@ export default function VideoBlock({ link }: { link?: string }) {
           {link ? (
             <iframe
               className='bg-light h-full w-full rounded-tr-[42px] lg:rounded-tr-[65px]'
-              src={link}
+              src={`https://rutube.ru/play/embed/${getVideoIdFromLink(link)}`}
               allow='autoplay; fullscreen'
               allowFullScreen
+              sandbox='allow-same-origin allow-scripts allow-popups allow-presentation'
+              referrerPolicy='strict-origin-when-cross-origin'
             />
           ) : (
             <svg
