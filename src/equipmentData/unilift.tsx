@@ -156,7 +156,7 @@ export const unilift: Equipment = {
         {
           title: 'Унилифт Электро',
           subTitle: 'Электрический подьменик',
-          description: <>Управление высотой с пульта, встроенный аккумулятор фывафывайукйцу</>,
+          description: <>Управление высотой с пульта, встроенный аккумулятор</>,
           img: {
             src: unilift_configuration,
           },

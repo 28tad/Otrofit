@@ -13,12 +13,12 @@ export default function ConfigurationsBlock(props: ConfigurationBlock) {
         {baseConfiguration.map((c, index) => (
           <div
             key={index}
-            className='bg-light flex h-[160px] gap-[18px] rounded-[40px] lg:h-[220px] lg:gap-[28px] lg:rounded-[65px] lg:p-[30px]'
+            className='bg-light flex h-[160px] gap-[18px] rounded-[40px] shadow-lg lg:h-[220px] lg:gap-[28px] lg:rounded-[65px] lg:p-[30px]'
           >
-            <div className='h-full w-[121px] rounded-l-[26px] lg:size-[160px] lg:rounded-l-[40px]'>
+            <div className='h-full w-[121px] overflow-hidden rounded-l-[26px] lg:size-[160px] lg:rounded-l-[40px]'>
               <Image
                 src={c.img.src}
-                className='h-full w-full lg:size-[160px]'
+                className='h-full w-full object-cover'
                 alt={c.img.alt || 'configuration_image'}
               />
             </div>
