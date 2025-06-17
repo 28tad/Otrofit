@@ -51,11 +51,18 @@ export default function About() {
   return (
     <>
       {/* desktop block */}
-      <div className='mx-auto hidden max-h-[500px] max-w-[1920px] grid-cols-2 gap-[32px] lg:grid'>
-        <div className='relative h-[500px] w-full overflow-hidden rounded-br-[50px]'>
-          <Image src={bg} alt='fitroller' fill className='object-fit' loading='lazy' />
+      <div className='mx-auto hidden max-w-[1920px] grid-cols-2 lg:grid'>
+        <div className='overflow-hidden rounded-br-[50px] lg:pr-[32px]'>
+          <Image
+            src={bg}
+            alt='fitroller'
+            width={bg.width}
+            height={bg.height}
+            className='h-auto w-full'
+            loading='lazy'
+          />
         </div>
-        <div className='relative pr-[62px]'>
+        <div className='relative flex justify-center pr-[62px]'>
           <FirstContent />
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { Equipment } from '@/app/types/equipment'
 import fitroller_characteristic_img from '@/images/section_fitroller_tech.webp'
 import fitroller_slider_image from '@/images/section_catalog_fitroller.webp'
+import fitroller_slider_above from '@/images/fitroller_slider_above.webp'
+import fitroller_slider_gear from '@/images/fitroller_slider_gear.jpg'
 
 export const fitRoller: Equipment = {
   title: 'FITRoller',
@@ -10,6 +12,14 @@ export const fitRoller: Equipment = {
       images: [
         {
           url: fitroller_slider_image,
+          alt: 'FitRoller',
+        },
+        {
+          url: fitroller_slider_above,
+          alt: 'FitRoller',
+        },
+        {
+          url: fitroller_slider_gear,
           alt: 'FitRoller',
         },
       ],

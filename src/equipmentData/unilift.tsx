@@ -141,14 +141,40 @@ export const unilift: Equipment = {
       type: 'configuration',
       configurations: [
         {
-          title: 'Унилифт',
-          subTitle: 'Подвес мобильный терапевтический',
+          title: 'Унилифт Стандарт',
+          subTitle: 'Механический подъёмник',
           description: (
             <>
-              Уникальность и главное преимущество <span className='font-bold'>унилифт</span>
+              Базовая модель <span className='font-bold'>унилифт</span> для безопасного перемещения
+              и посадки пациента вручную
             </>
           ),
-          price: 'ОТ 2 000 000 ₽',
+          img: {
+            src: unilift_configuration,
+          },
+        },
+        {
+          title: 'Унилифт Электро',
+          subTitle: 'Электрический подьменик',
+          description: <>Управление высотой с пульта, встроенный аккумулятор фывафывайукйцу</>,
+          img: {
+            src: unilift_configuration,
+          },
+        },
+        {
+          title: 'Унилифт Санитар',
+          subTitle: 'С функцией вертикализации',
+          description: <>Позволяет приподнять тазовую область для проведения санитарных процедур</>,
+          img: {
+            src: unilift_configuration,
+          },
+        },
+        {
+          title: 'Унилифт Подвес',
+          subTitle: 'С функцией вертикализации',
+          description: (
+            <>Дополнительно оснащается подвесом — для перемещения и поддержки при вставании</>
+          ),
           img: {
             src: unilift_configuration,
           },

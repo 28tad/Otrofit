@@ -51,7 +51,7 @@ export interface Configuration {
   title: string
   subTitle: string
   description: string | ReactElement
-  price: string
+  price?: string
   img: {
     src: StaticImageData
     alt?: string

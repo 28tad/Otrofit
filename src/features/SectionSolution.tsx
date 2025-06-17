@@ -3,7 +3,6 @@ import fitroller from '@/images/section_catalog_fitroller.webp'
 import unilift from '@/images/section_catalog_unilift.webp'
 import unilift_mob from '@/images/section_catalog_unilift_mob.webp'
 import carusel_uni from '@/images/carusel_uni.webp'
-import carusel_fit from '@/images/carusel_fit.webp'
 import Image, { StaticImageData } from 'next/image'
 import {
   Carousel,
@@ -32,7 +31,7 @@ interface ProductItem {
   blueTitle: string
   description: React.ReactNode
   img: StaticImageData
-  caruselItems: CaruselItem[]
+  caruselItems?: CaruselItem[]
   mobImg?: StaticImageData
   placement: 'left' | 'right'
 }
@@ -51,13 +50,6 @@ const items: ProductItem[] = [
       </>
     ),
     img: fitroller,
-    caruselItems: [
-      {
-        img: carusel_fit,
-        title: 'fitroller',
-        price: 'ОТ 2 000 000 ₽',
-      },
-    ],
     placement: 'left',
   },
   {
@@ -75,7 +67,22 @@ const items: ProductItem[] = [
     caruselItems: [
       {
         img: carusel_uni,
-        title: 'унилифт',
+        title: 'Унилифт Стандарт',
+        price: 'ОТ 2 000 000 ₽',
+      },
+      {
+        img: carusel_uni,
+        title: 'Унилифт Электро',
+        price: 'ОТ 2 000 000 ₽',
+      },
+      {
+        img: carusel_uni,
+        title: 'Унилифт Санитар',
+        price: 'ОТ 2 000 000 ₽',
+      },
+      {
+        img: carusel_uni,
+        title: 'Унилифт Подвес',
         price: 'ОТ 2 000 000 ₽',
       },
     ],
@@ -114,33 +121,35 @@ const Card = (item: ProductItem) => {
           <div className='mt-[16px] ml-[25px] text-[14px] leading-[100%] font-light lg:mt-[30px] lg:ml-0 lg:text-[18px]'>
             {item.description}
           </div>
-          <Carousel
-            className='mt-[45px] ml-[25px] w-[281px] lg:ml-[43px] lg:w-[430px]'
-            opts={{ loop: true }}
-          >
-            <CarouselContent>
-              {new Array(3).fill(item.caruselItems[0]).map((c, index) => (
-                <CarouselItem className='flex gap-[30px]' key={c.title + index}>
-                  <Image
-                    alt={c.title}
-                    src={c.img}
-                    className='size-[100px] rounded-tl-[25px] lg:size-[160px]'
-                  />
-                  <div className='flex flex-col justify-around lg:justify-between'>
-                    <div className='text-gray text-[18px] font-bold uppercase lg:text-[20px]'>
-                      {c.title}
+          {item.caruselItems && (
+            <Carousel
+              className='mt-[45px] ml-[25px] w-[281px] lg:ml-[43px] lg:w-[430px]'
+              opts={{ loop: true }}
+            >
+              <CarouselContent>
+                {item.caruselItems.map((c, index) => (
+                  <CarouselItem className='flex gap-[30px]' key={c.title + index}>
+                    <Image
+                      alt={c.title}
+                      src={c.img}
+                      className='size-[100px] rounded-tl-[25px] lg:size-[160px]'
+                    />
+                    <div className='flex flex-col justify-around lg:justify-between'>
+                      <div className='text-gray text-[18px] font-bold uppercase lg:text-[20px]'>
+                        {c.title}
+                      </div>
+                      <div className='text-blue text-[18px] font-bold italic lg:text-[26px]'>
+                        {c.price}
+                      </div>
+                      <ConnectUsButton className='hidden lg:flex' />
                     </div>
-                    <div className='text-blue text-[18px] font-bold italic lg:text-[26px]'>
-                      {c.price}
-                    </div>
-                    <ConnectUsButton className='hidden lg:flex' />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          )}
         </div>
 
         {item.placement === 'right' && (

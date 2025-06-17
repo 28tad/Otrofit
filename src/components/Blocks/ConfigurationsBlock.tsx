@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Configuration, ConfigurationBlock } from '@/app/types/equipment'
 
 export default function ConfigurationsBlock(props: ConfigurationBlock) {
-  const baseConfiguration: Configuration[] = new Array(6).fill(props.configurations[0])
+  const baseConfiguration: Configuration[] = props.configurations
 
   return (
     <>
