@@ -37,6 +37,16 @@ export default function RootLayout({
         <SectionOS />
         <Footer />
         <Analytics mode={environment} debug={false} />
+        <noscript>
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src='https://mc.yandex.ru/watch/103118341'
+              style={{ position: 'absolute', left: '-9999px' }}
+              alt=''
+            />
+          </div>
+        </noscript>
       </body>
     </html>
   )
