@@ -35,7 +35,8 @@ export function Metrika() {
           defer: true,
           clickmap:true,
           trackLinks:true,
-          accurateTrackBounce:true
+          accurateTrackBounce:true,
+          webvisor: true
         });    
       `}
       </Script>
