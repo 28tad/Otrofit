@@ -6,6 +6,8 @@ import { ToastContainer } from 'react-toastify'
 import Footer from '@/components/Footer/Footer'
 import SectionOS from '@/features/SectionOS'
 import { Analytics, type AnalyticsProps } from '@vercel/analytics/next'
+import { Suspense } from 'react'
+import { Metrika } from '@/components/Metrika'
 
 const roboto = Roboto({
   weight: ['300', '400', '700'],
@@ -37,16 +39,9 @@ export default function RootLayout({
         <SectionOS />
         <Footer />
         <Analytics mode={environment} debug={false} />
-        <noscript>
-          <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src='https://mc.yandex.ru/watch/103118341'
-              style={{ position: 'absolute', left: '-9999px' }}
-              alt=''
-            />
-          </div>
-        </noscript>
+        <Suspense>
+          <Metrika />
+        </Suspense>
       </body>
     </html>
   )
