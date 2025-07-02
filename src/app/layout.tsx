@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: 'Ортофит – реабилитационное оборудование для активной жизни',
   description:
     'Ортофит - Профессиональные решения: тренажёр FITRoller для колясочников и подъёмное кресло Унилифт. Помогаем восстановить mobility и самостоятельность. Доставка по России.',
+  other: {
+    ['yandex-verification']: 'XXXXXXXXXXXXXXXX',
+  },
 }
 
 export default function RootLayout({
