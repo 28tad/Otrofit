@@ -43,7 +43,7 @@ export function Metrika() {
         <div>
           <img
             src={`https://mc.yandex.ru/watch/${counter}`}
-            style='position:absolute; left:-9999px;'
+            style={{ position: 'absolute', left: '-9999px' }}
             alt=''
           />
         </div>
