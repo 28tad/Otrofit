@@ -1,7 +1,12 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // Для App Router
+    './pages/**/*.{js,ts,jsx,tsx,mdx}', // Для Pages Router
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // Ваша текущая настройка
+    './components/**/*.{js,ts,jsx,tsx,mdx}', // Если есть компоненты
+  ],
   theme: {
     extend: {
       colors: {
