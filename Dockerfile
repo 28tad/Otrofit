@@ -48,4 +48,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Команда запуска
-CMD ["node", "server.js"]  # Запускаем server.js из корня standalone
+CMD ["node", ".next/standalone/server.js"]
