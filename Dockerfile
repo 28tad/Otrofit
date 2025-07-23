@@ -26,19 +26,19 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Копируем всю структуру standalone как есть (включая server.js)
+# Копируем содержимое standalone в корень /app (server.js будет в /app/server.js)
 COPY --from=builder /app/.next/standalone ./
 
-# Копируем статику в .next/static внутри standalone
+# Копируем статику в /app/.next/static
 COPY --from=builder /app/.next/static ./.next/static
 
 # Копируем public
 COPY --from=builder /app/public ./public
 
-# Копируем node_modules (если нужно, но обычно в standalone уже включены)
+# Копируем node_modules
 COPY --from=builder /app/node_modules ./node_modules
 
-# Копируем package.json и next.config.ts (если нужны для runtime)
+# Копируем package.json и next.config.ts
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/next.config.ts ./next.config.ts
 
@@ -49,5 +49,5 @@ ENV PORT=8080
 # Экспонируем порт для Timeweb
 EXPOSE 8080
 
-# Команда запуска (указываем полный путь к server.js)
-CMD ["node", ".next/standalone/server.js"]
+# Команда запуска с логированием (вывод в логи Timeweb)
+CMD ["sh", "-c", "echo 'Starting server on PORT $PORT' && node server.js 2>&1"]
