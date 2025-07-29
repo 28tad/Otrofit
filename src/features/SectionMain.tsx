@@ -38,7 +38,7 @@ export default function SectionMain() {
             <div className='mx-auto h-[240px] w-[290px] rounded-t-[50px] bg-white px-[15px] pt-[15px]'>
               <Image
                 src={image_mob}
-                alt='fitroller'
+                alt='ортофит роллер'
                 className='h-[230px] w-[260px] object-contain'
               />
             </div>

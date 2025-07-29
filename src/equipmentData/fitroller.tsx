@@ -13,19 +13,19 @@ export const fitRoller: Equipment = {
       images: [
         {
           url: roller_slider_0,
-          alt: 'FitRoller',
+          alt: 'ортофит роллер',
         },
         {
           url: roller_slider_1,
-          alt: 'FitRoller',
+          alt: 'ортофит роллер',
         },
         {
           url: roller_slider_2,
-          alt: 'FitRoller',
+          alt: 'ортофит роллер',
         },
         {
           url: roller_slider_3,
-          alt: 'FitRoller',
+          alt: 'ортофит роллер',
         },
       ],
       // price: 'от 2 000 000 ₽',
@@ -109,7 +109,7 @@ export const fitRoller: Equipment = {
     },
     {
       type: 'list',
-      title: 'Преимущества FITRoller',
+      title: 'Преимущества ортофит роллер',
       listDecimal: true,
       items: [
         <>

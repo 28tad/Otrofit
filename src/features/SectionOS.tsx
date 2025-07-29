@@ -97,7 +97,7 @@ export default function SectionOS() {
                 label='Продукты'
                 required
                 options={[
-                  { value: 'FITRoller', label: 'FITRoller' },
+                  { value: 'ортофит роллер', label: 'ортофит роллер' },
                   {
                     label: 'Унилифт',
                     options: uniLiftOptions,

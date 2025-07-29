@@ -159,9 +159,9 @@ const Card = (item: ProductItem) => {
           </div>
         )}
 
-        <button className='bg-blue mt-[16px] block h-[60px] w-full rounded-[18px] font-bold text-white uppercase lg:hidden'>
+        {/* <button className='bg-blue mt-[16px] block h-[60px] w-full rounded-[18px] font-bold text-white uppercase lg:hidden'>
           ознакомиться
-        </button>
+        </button> */}
       </Container>
     </>
   )
