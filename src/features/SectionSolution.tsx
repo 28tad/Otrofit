@@ -2,7 +2,9 @@ import { Container } from '@/components/Container'
 import fitroller from '@/images/section_catalog_fitroller.webp'
 import unilift from '@/images/section_catalog_unilift.webp'
 import unilift_mob from '@/images/section_catalog_unilift_mob.webp'
-import carusel_uni from '@/images/carusel_uni.webp'
+import unilift_standart from '@/images/unilift_standart.webp'
+import unilift_sanitar from '@/images/unilift_sanitar.webp'
+import unilift_podves from '@/images/unilift_podves.webp'
 import Image, { StaticImageData } from 'next/image'
 import {
   Carousel,
@@ -38,7 +40,7 @@ interface ProductItem {
 
 const items: ProductItem[] = [
   {
-    title: 'FITRoller',
+    title: 'ортофит фитроллер',
     blueTitle: 'Тренажер активной колясочной езды',
     subtitle:
       'Каждое решение — это шаг к свободе движения, самостоятельности и лучшему качеству жизни',
@@ -53,7 +55,7 @@ const items: ProductItem[] = [
     placement: 'left',
   },
   {
-    title: 'унилифт',
+    title: 'ортофит унилифт',
     blueTitle: 'Подвес мобильный терапевтический',
     subtitle: 'Мы создаём решения, которые работают на практике — там, где это действительно нужно',
     description: (
@@ -66,22 +68,22 @@ const items: ProductItem[] = [
     img: unilift,
     caruselItems: [
       {
-        img: carusel_uni,
+        img: unilift_standart,
         title: 'Унилифт Стандарт',
         price: 'ОТ 2 000 000 ₽',
       },
       {
-        img: carusel_uni,
+        img: unilift_podves,
         title: 'Унилифт Электро',
         price: 'ОТ 2 000 000 ₽',
       },
       {
-        img: carusel_uni,
+        img: unilift_sanitar,
         title: 'Унилифт Санитар',
         price: 'ОТ 2 000 000 ₽',
       },
       {
-        img: carusel_uni,
+        img: unilift_podves,
         title: 'Унилифт Подвес',
         price: 'ОТ 2 000 000 ₽',
       },
@@ -138,9 +140,9 @@ const Card = (item: ProductItem) => {
                       <div className='text-gray text-[18px] font-bold uppercase lg:text-[20px]'>
                         {c.title}
                       </div>
-                      <div className='text-blue text-[18px] font-bold italic lg:text-[26px]'>
+                      {/* <div className='text-blue text-[18px] font-bold italic lg:text-[26px]'>
                         {c.price}
-                      </div>
+                      </div> */}
                       <ConnectUsButton className='hidden lg:flex' />
                     </div>
                   </CarouselItem>

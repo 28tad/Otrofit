@@ -9,7 +9,7 @@ export interface SliderBlock extends BaseBlock {
     url: StaticImageData
     alt?: string
   }[]
-  price: string
+  price?: string
   story: StoryBlock
   list: ListBlock
 }

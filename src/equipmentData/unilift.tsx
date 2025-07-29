@@ -1,7 +1,22 @@
 import { Equipment } from '@/app/types/equipment'
 import slider_unilift from '@/images/section_catalog_unilift.webp'
 import unilift_tech_characteristics from '@/images/section_unilift_tech.webp'
-import unilift_configuration from '@/images/unilift_configuration.webp'
+import unilift_slider_m1 from '@/images/unilift_slider_m_1.webp'
+import unilift_slider_m2 from '@/images/unilift_slider_m_2.webp'
+import unilift_slider_m3 from '@/images/unilift_slider_m_3.webp'
+import unilift_slider_p1 from '@/images/unilift_slider_p_1.webp'
+import unilift_slider_p2 from '@/images/unilift_slider_p_2.webp'
+import unilift_slider_p3 from '@/images/unilift_slider_p_3.webp'
+import unilift_slider_p4 from '@/images/unilift_slider_p_4.webp'
+import unilift_slider_s1 from '@/images/unilift_slider_s_1.webp'
+import unilift_slider_s2 from '@/images/unilift_slider_s_2.webp'
+import unilift_slider_s3 from '@/images/unilift_slider_s_3.webp'
+import unilift_slider_s4 from '@/images/unilift_slider_s_4.webp'
+import unilift_slider_s5 from '@/images/unilift_slider_s_5.webp'
+import configuration_meha from '@/images/configuration_meha.webp'
+import configuration_podves from '@/images/configuration_podves.webp'
+import configuration_sanitar from '@/images/configuration_sanitar.webp'
+import configuration_elektro from '@/images/configuration_elektro.webp'
 
 export const unilift: Equipment = {
   title: 'унилифт',
@@ -18,10 +33,58 @@ export const unilift: Equipment = {
           </>
         ),
       },
-      price: 'от 2 000 000 ₽',
+      // price: 'от 2 000 000 ₽',
       images: [
         {
           url: slider_unilift,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_m1,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_m2,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_m3,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_p1,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_p2,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_p3,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_p4,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_s1,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_s2,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_s3,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_s4,
+          alt: 'Унилифт',
+        },
+        {
+          url: unilift_slider_s5,
           alt: 'Унилифт',
         },
       ],
@@ -141,16 +204,11 @@ export const unilift: Equipment = {
       type: 'configuration',
       configurations: [
         {
-          title: 'Унилифт Стандарт',
-          subTitle: 'Механический подъёмник',
-          description: (
-            <>
-              Базовая модель <span className='font-bold'>унилифт</span> для безопасного перемещения
-              и посадки пациента вручную
-            </>
-          ),
+          title: 'Унилифт Меха',
+          subTitle: 'Механический подьменик',
+          description: <>Управление высотой с пульта, встроенный аккумулятор</>,
           img: {
-            src: unilift_configuration,
+            src: configuration_meha,
           },
         },
         {
@@ -158,15 +216,15 @@ export const unilift: Equipment = {
           subTitle: 'Электрический подьменик',
           description: <>Управление высотой с пульта, встроенный аккумулятор</>,
           img: {
-            src: unilift_configuration,
+            src: configuration_elektro,
           },
         },
         {
           title: 'Унилифт Санитар',
-          subTitle: 'С функцией вертикализации',
+          subTitle: 'С функцией вертикализации таза',
           description: <>Позволяет приподнять тазовую область для проведения санитарных процедур</>,
           img: {
-            src: unilift_configuration,
+            src: configuration_sanitar,
           },
         },
         {
@@ -176,13 +234,10 @@ export const unilift: Equipment = {
             <>Дополнительно оснащается подвесом — для перемещения и поддержки при вставании</>
           ),
           img: {
-            src: unilift_configuration,
+            src: configuration_podves,
           },
         },
       ],
-    },
-    {
-      type: 'video',
     },
   ],
 }

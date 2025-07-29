@@ -16,10 +16,12 @@ export const SliderBlockComponent = (props: SliderBlock) => {
         <ItemCarousel items={duplicatedImages} />
       </div>
       <div>
-        <div className='text-blue mb-[18px] flex justify-between text-[20px] font-bold uppercase italic lg:text-[39px]'>
-          цена
-          <div>{price}</div>
-        </div>
+        {price && (
+          <div className='text-blue mb-[18px] flex justify-between text-[20px] font-bold uppercase italic lg:text-[39px]'>
+            цена
+            <div>{price}</div>
+          </div>
+        )}
         <Story>{story.content}</Story>
         <div className='my-[18px] lg:mb-[33px]'>
           <List {...list} />

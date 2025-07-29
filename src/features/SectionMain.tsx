@@ -10,7 +10,7 @@ export default function SectionMain() {
       {/* desktop */}
       <div className='bg-gray mx-auto hidden h-[540px] max-w-[1920px] grid-cols-2 text-white lg:grid'>
         <div className='rounded-tr-[50px] bg-white lg:pt-[34px] lg:pr-[25px]'>
-          <Image src={image} alt='fitroller' className='max-h-[500px]' />
+          <Image src={image} alt='fitroller' />
         </div>
         <div className='relative flex justify-center rounded-bl-[50px]'>
           <div className='bg-gray absolute bottom-[-55px] h-[167px] w-full rounded-bl-[50px]' />
