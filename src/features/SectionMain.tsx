@@ -8,15 +8,15 @@ export default function SectionMain() {
   return (
     <>
       {/* desktop */}
-      <div className='mx-auto grid hidden h-[650px] max-w-[1920px] grid-cols-2 lg:grid'>
-        <div className='bg-gray'>
+      <div className='mx-auto grid hidden h-[650px] max-w-[1920px] grid-cols-9 lg:grid'>
+        <div className='bg-gray col-span-4'>
           <div className='h-full w-full rounded-tr-[80px] bg-white pt-[40px] pr-[40px] pb-[60px]'>
             <div className='bg-blue h-full overflow-hidden rounded-tr-[80px] rounded-br-[80px]'>
               <Image src={image} alt='fitroller' className='h-full w-full object-cover' />
             </div>
           </div>
         </div>
-        <div className='bg-gray flex justify-center rounded-bl-[80px] text-white'>
+        <div className='bg-gray col-span-5 flex justify-center rounded-bl-[80px] text-white'>
           <div className='flex flex-col items-end gap-[40px]'>
             <h1 className='mt-[93px] text-right text-[60px] leading-[100%] font-bold uppercase'>
               Мы <br /> разрабатываем <br /> и подбираем <br />
