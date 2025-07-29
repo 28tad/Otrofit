@@ -26,7 +26,7 @@ const items = [
     img: chair,
   },
   {
-    title: 'FITRoller',
+    title: 'ортофит роллер',
     description: 'Тренажер активной колясочной езды',
     href: frontendRoutes.fitRoller,
     img: fitroller,

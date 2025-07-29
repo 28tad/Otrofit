@@ -8,7 +8,7 @@ import { frontendRoutes } from '@/app/links'
 
 const pages = [
   { title: 'Главная', href: frontendRoutes.main },
-  { title: 'FITRoller', href: frontendRoutes.fitRoller },
+  { title: 'Роллер', href: frontendRoutes.fitRoller },
   { title: 'Унилифт', href: frontendRoutes.unilift },
   { title: 'О нас', href: frontendRoutes.about },
 ]

@@ -1,29 +1,34 @@
 import { Equipment } from '@/app/types/equipment'
 import fitroller_characteristic_img from '@/images/section_fitroller_tech.webp'
-import fitroller_slider_image from '@/images/section_catalog_fitroller.webp'
-import fitroller_slider_above from '@/images/fitroller_slider_above.webp'
-import fitroller_slider_gear from '@/images/fitroller_slider_gear.webp'
+import roller_slider_0 from '@/images/roller_slider_0.webp'
+import roller_slider_1 from '@/images/roller_slider_1.webp'
+import roller_slider_2 from '@/images/roller_slider_2.webp'
+import roller_slider_3 from '@/images/roller_slider_3.webp'
 
 export const fitRoller: Equipment = {
-  title: 'FITRoller',
+  title: 'ОРТОФИТ РОЛЛЕР',
   blocks: [
     {
       type: 'slider',
       images: [
         {
-          url: fitroller_slider_image,
+          url: roller_slider_0,
           alt: 'FitRoller',
         },
         {
-          url: fitroller_slider_above,
+          url: roller_slider_1,
           alt: 'FitRoller',
         },
         {
-          url: fitroller_slider_gear,
+          url: roller_slider_2,
+          alt: 'FitRoller',
+        },
+        {
+          url: roller_slider_3,
           alt: 'FitRoller',
         },
       ],
-      price: 'от 2 000 000 ₽',
+      // price: 'от 2 000 000 ₽',
       story: {
         type: 'story',
         content: (
@@ -141,7 +146,7 @@ export const fitRoller: Equipment = {
       type: 'image',
       src: fitroller_characteristic_img,
       title: 'Технические характеристики ',
-      alt: 'Технические характеристики фитроллер',
+      alt: 'Технические характеристики ортофит роллер',
     },
     {
       type: 'list',

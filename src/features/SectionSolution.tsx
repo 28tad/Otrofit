@@ -1,7 +1,6 @@
 import { Container } from '@/components/Container'
 import fitroller from '@/images/section_catalog_fitroller.webp'
 import unilift from '@/images/section_catalog_unilift.webp'
-import unilift_mob from '@/images/section_catalog_unilift_mob.webp'
 import unilift_standart from '@/images/unilift_standart.webp'
 import unilift_sanitar from '@/images/unilift_sanitar.webp'
 import unilift_podves from '@/images/unilift_podves.webp'
@@ -40,15 +39,15 @@ interface ProductItem {
 
 const items: ProductItem[] = [
   {
-    title: 'ортофит фитроллер',
+    title: 'ортофит роллер',
     blueTitle: 'Тренажер активной колясочной езды',
     subtitle:
       'Каждое решение — это шаг к свободе движения, самостоятельности и лучшему качеству жизни',
     description: (
       <>
-        <span className='font-bold'>FitRoller</span> — тренажёр, позволяющий проводить полноценные
-        тренировки прямо в в кресло-коляске. Он помогает развивать силу, выносливость и координацию
-        без необходимости посещения спортзала или помощи извне
+        <span className='font-bold'>Ортофит роллер</span> — тренажёр, позволяющий проводить
+        полноценные тренировки прямо в в кресло-коляске. Он помогает развивать силу, выносливость и
+        координацию без необходимости посещения спортзала или помощи извне
       </>
     ),
     img: fitroller,
@@ -88,7 +87,7 @@ const items: ProductItem[] = [
         price: 'ОТ 2 000 000 ₽',
       },
     ],
-    mobImg: unilift_mob,
+    mobImg: unilift,
     placement: 'right',
   },
 ]
