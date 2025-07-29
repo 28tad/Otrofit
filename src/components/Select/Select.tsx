@@ -6,12 +6,19 @@ export interface OptionType {
   value: string
 }
 
+export interface GroupedOption {
+  label: string
+  options: OptionType[]
+}
+
+export type SelectOption = OptionType | GroupedOption
+
 export interface SelectProps<T extends FieldValues> {
   name: Path<T>
   control: Control<T>
   label: string
   required?: boolean
-  options: OptionType[]
+  options: SelectOption[]
   errors: FieldErrors<T>
   isCreatable?: boolean
 }
@@ -48,8 +55,11 @@ export const Select = <T extends FieldValues>({
               options={options}
               isCreatable={isCreatable}
               value={
-                options.find((opt) => opt.value === field.value) ||
-                (isCreatable ? { label: field.value, value: field.value } : null)
+                (Array.isArray(options)
+                  ? options
+                      .flatMap((opt) => ('options' in opt ? opt.options : [opt]))
+                      .find((opt) => opt.value === field.value)
+                  : null) || (isCreatable ? { label: field.value, value: field.value } : null)
               }
               onChange={(option) => field.onChange(option?.value ?? '')}
               classNamePrefix='react-select'

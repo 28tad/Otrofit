@@ -42,14 +42,12 @@ export function ItemCarousel({ items }: { items: ItemCarouselProps['items'] }) {
   return (
     <>
       {/* main slide */}
-      <div className='mx-auto flex h-[340px] w-[340px] items-center justify-center rounded-tl-[65px] lg:h-[440px] lg:w-[520px]'>
+      <div className='mx-auto flex h-[340px] w-[340px] items-center justify-center overflow-hidden rounded-tl-[65px] lg:h-[440px] lg:w-[520px]'>
         {slides[current] && (
           <Image
             src={slides[current].url}
             alt={slides[current].alt || 'slide_img'}
-            className='h-full w-fit lg:max-h-[440px]'
-            width={520}
-            height={440}
+            className='h-full w-full object-cover'
           />
         )}
       </div>
@@ -66,7 +64,7 @@ export function ItemCarousel({ items }: { items: ItemCarouselProps['items'] }) {
         <Carousel
           opts={{ loop: true }}
           setApi={setApi}
-          className='mx-auto mt-[18px] ml-[50px] max-w-[250px] lg:mt-[33px] lg:max-w-[430px]'
+          className='mx-auto mt-[18px] max-w-[250px] lg:mt-[33px] lg:max-w-[430px]'
         >
           <CarouselContent>
             {slides.map((item, index) => (
@@ -77,12 +75,12 @@ export function ItemCarousel({ items }: { items: ItemCarouselProps['items'] }) {
               >
                 <div
                   data-active={index === current}
-                  className='flex size-[70px] items-center justify-center rounded-tl-[15px] lg:size-[120px] lg:rounded-tl-[24px]'
+                  className='flex size-[70px] items-center justify-center overflow-hidden rounded-tl-[15px] lg:size-[120px] lg:rounded-tl-[24px]'
                 >
                   <Image
                     src={item.url}
                     alt={slides[current].alt || `carusel_item_${index}`}
-                    className='size-[70px] lg:size-[120px]'
+                    className='h-full w-full object-cover'
                   />
                 </div>
               </CarouselItem>

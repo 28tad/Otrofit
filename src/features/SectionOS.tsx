@@ -13,6 +13,7 @@ import { anchors } from '@/app/links'
 import { Select } from '@/components/Select/Select'
 import { cityOptions } from '@/components/Select/cityOptions'
 import { PhoneInputField } from '@/components/PhoneInput'
+import { unilift } from '@/equipmentData/unilift'
 
 const schema = z.object({
   fio: z.string().min(5, 'заполните поле'),
@@ -23,6 +24,11 @@ const schema = z.object({
 })
 
 export type ContactForm = z.infer<typeof schema>
+
+const uniLiftOptions =
+  unilift.blocks
+    .find((b) => b.type === 'configuration')
+    ?.configurations.map((c) => ({ value: c.title, label: c.title })) || []
 
 export default function SectionOS() {
   const {
@@ -92,7 +98,10 @@ export default function SectionOS() {
                 required
                 options={[
                   { value: 'FITRoller', label: 'FITRoller' },
-                  { value: 'Унилифт', label: 'Унилифт' },
+                  {
+                    label: 'Унилифт',
+                    options: uniLiftOptions,
+                  },
                 ]}
                 errors={errors}
               />
