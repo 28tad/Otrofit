@@ -206,7 +206,7 @@ export const unilift: Equipment = {
         {
           title: 'Унилифт Меха',
           subTitle: 'Механический подьменик',
-          description: <>Управление высотой с пульта, встроенный аккумулятор</>,
+          description: <>Регулировка высоты вручную, подъём за счёт вращения ручек</>,
           img: {
             src: configuration_meha,
           },
