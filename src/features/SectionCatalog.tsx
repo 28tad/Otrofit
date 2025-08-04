@@ -21,7 +21,7 @@ const ArrowRight = () => {
 const items = [
   {
     title: 'унилифт',
-    description: 'Подвес мобильный терапевтический',
+    description: 'Средство для помощи за уходом',
     href: frontendRoutes.unilift,
     img: chair,
   },

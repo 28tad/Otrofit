@@ -52,7 +52,7 @@ export default function Footer() {
                 >
                   О нас
                 </Link>
-                <Link href={frontendRoutes.fitRoller}>FitRoller</Link>
+                <Link href={frontendRoutes.fitRoller}>Роллер</Link>
               </div>
             </div>
           </div>
