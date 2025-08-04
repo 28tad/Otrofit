@@ -3,11 +3,11 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   const token = process.env.TG_TOKEN
   const chatId = process.env.TG_CHAT_ID
-
+  const message_thread_id = process.env.THREAD_ID ? Number(process.env.THREAD_ID) : undefined
   if (!token || !chatId) {
     return NextResponse.json({ error: 'Missing Telegram config' }, { status: 500 })
   }
-
+  console.log(message_thread_id, chatId, token)
   try {
     const body = await req.json()
 
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         chat_id: chatId,
         text: body.message,
-        message_thread_id: body.message_thread_id || undefined,
+        message_thread_id: message_thread_id,
         parse_mode: 'HTML',
       }),
     })
