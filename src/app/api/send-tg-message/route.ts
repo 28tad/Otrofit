@@ -7,7 +7,6 @@ export async function POST(req: NextRequest) {
   if (!token || !chatId) {
     return NextResponse.json({ error: 'Missing Telegram config' }, { status: 500 })
   }
-  console.log(message_thread_id, chatId, token)
   try {
     const body = await req.json()
 
