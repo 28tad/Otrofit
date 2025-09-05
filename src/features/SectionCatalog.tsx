@@ -46,18 +46,20 @@ export default function SectionCatalog() {
       <Image src={left_chair} alt='left_chair_bg' className='absolute z-[-1] hidden lg:block' />
       <Container className='mt-[48px] mb-[90px] lg:mt-[150px] lg:mb-[73px]'>
         <div className='text-center text-[24px] font-bold uppercase lg:text-[36px]'>каталог</div>
-        <div className='mt-[30px] flex justify-center gap-[24px] lg:mt-[60px]'>
+
+        <div className='mt-[30px] flex flex-wrap justify-center gap-x-[24px] gap-y-[60px] lg:mt-[60px] lg:flex-nowrap'>
           {items.map((i) => {
             return (
               <div
                 key={i.title}
-                className='bg-light relative flex h-[272px] w-[155px] flex-col items-center justify-center gap-[18px] rounded-t-[25px] rounded-bl-[25px] pt-[15px] pb-[42px] lg:h-[450px] lg:w-[250px] lg:gap-[23px] lg:rounded-t-[50px] lg:rounded-bl-[50px] lg:px-[45px] lg:py-[44px]'
+                className='bg-light relative flex h-[272px] w-[155px] shrink-0 flex-col items-center justify-center gap-[18px] rounded-t-[25px] rounded-bl-[25px] pt-[15px] pb-[42px] lg:h-[450px] lg:w-[250px] lg:gap-[23px] lg:rounded-t-[50px] lg:rounded-bl-[50px] lg:px-[45px] lg:py-[44px]'
               >
                 <Image src={i.img} alt={i.title} className='size-[87px] lg:size-[143px]' />
                 <div className='text-gray text-[16px] font-bold uppercase lg:text-[15px]'>
                   {i.title}
                 </div>
                 <div className='text-center text-[14px] lg:text-[15px]'>{i.description}</div>
+
                 <Link
                   href={i.href}
                   className='bg-blue hidden size-[60px] items-center justify-center rounded-[100%] lg:flex'
@@ -75,6 +77,7 @@ export default function SectionCatalog() {
           })}
         </div>
       </Container>
+
       <Image
         src={right_chair}
         alt='right_chair_bg'
