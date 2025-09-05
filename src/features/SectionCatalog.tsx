@@ -3,6 +3,7 @@ import chair from '@/images/chair_img.webp'
 import left_chair from '@/images/left_chair.webp'
 import right_chair from '@/images/right_chair.webp'
 import fitroller from '@/images/fitroller_img.webp'
+import gantry from '@/images/gantry/gantry_catalog.webp'
 import Image from 'next/image'
 import Link from 'next/link'
 import { frontendRoutes } from '@/app/links'
@@ -21,7 +22,7 @@ const ArrowRight = () => {
 const items = [
   {
     title: 'унилифт',
-    description: 'Средство для помощи за уходом',
+    description: 'Средство для помощи в уходе',
     href: frontendRoutes.unilift,
     img: chair,
   },
@@ -30,6 +31,12 @@ const items = [
     description: 'Тренажер активной колясочной езды',
     href: frontendRoutes.fitRoller,
     img: fitroller,
+  },
+  {
+    title: 'ортофит гантри',
+    description: 'Мобильная стойка',
+    href: frontendRoutes.gantry,
+    img: gantry,
   },
 ]
 

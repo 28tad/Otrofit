@@ -1,10 +1,12 @@
 import { Equipment } from '@/app/types/equipment'
 import { fitRoller } from './fitroller'
 import { unilift } from './unilift'
+import { gantry } from './gantry'
 
 export const EQUIPMENT_KEYS = {
   FITROLLER: 'roller',
   UNILIFT: 'unilift',
+  GANTRY: 'gantry',
 } as const
 
 export type EquipmentKey = (typeof EQUIPMENT_KEYS)[keyof typeof EQUIPMENT_KEYS]
@@ -26,5 +28,11 @@ export const equipmentData: Record<EquipmentKey, EquipmentRow> = {
     title: 'Ортофит | Унилифт',
     description:
       'Ортофит - Унилифт - мобильное подъемное кресло с электроприводом для ухода за лежачими больными. Произведено в России, нагрузка 120 кг, автономная работа от аккумулятора. Используется в медучреждениях и дома: пересадка в коляску, гигиенические процедуры, вертикализация. Доставка по всей России.',
+  },
+  [EQUIPMENT_KEYS.GANTRY]: {
+    data: gantry,
+    title: 'Ортофит | Гантри',
+    description:
+      'Ортофит - Гантри - мобильная П-образная стойка для подъёма пациента из кровати и безопасной пересадки в инвалидную коляску',
   },
 }

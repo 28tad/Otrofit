@@ -40,18 +40,30 @@ export default function Footer() {
                 >
                   Главная страница
                 </Link>
+
                 <Link
                   href={frontendRoutes.unilift}
                   className='max-w-[212px] border-b border-white/30 pb-[8px]'
                 >
                   Унилифт
                 </Link>
+
+                <div className='hidden lg:block' aria-hidden />
+
+                <Link
+                  href={frontendRoutes.gantry}
+                  className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                >
+                  Гантри
+                </Link>
+
                 <Link
                   href={frontendRoutes.about}
                   className='max-w-[212px] border-b border-white/30 pb-[8px] lg:border-none'
                 >
                   О нас
                 </Link>
+
                 <Link href={frontendRoutes.fitRoller}>Роллер</Link>
               </div>
             </div>

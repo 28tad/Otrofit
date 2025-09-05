@@ -98,6 +98,7 @@ export default function SectionOS() {
                 required
                 options={[
                   { value: 'Ортофит роллер', label: 'Ортофит роллер' },
+                  { value: 'Ортофит гантри', label: 'Ортофит гантри' },
                   {
                     label: 'Унилифт',
                     options: uniLiftOptions,
