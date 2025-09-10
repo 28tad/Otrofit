@@ -33,38 +33,51 @@ export default function Footer() {
               <div className='text-blue mt-[60px] text-[20px] font-bold uppercase lg:mt-0'>
                 ссылки
               </div>
-              <div className='mt-[8px] grid grid-cols-1 gap-[8px] text-white lg:mt-[18px] lg:grid-cols-2'>
-                <Link
-                  href={frontendRoutes.main}
-                  className='max-w-[212px] border-b border-white/30 pb-[8px]'
-                >
-                  Главная страница
-                </Link>
 
-                <Link
-                  href={frontendRoutes.unilift}
-                  className='max-w-[212px] border-b border-white/30 pb-[8px]'
-                >
-                  Унилифт
-                </Link>
+              <div className='mt-[8px] grid grid-cols-1 gap-[8px] text-white lg:mt-[18px] lg:grid-cols-2 lg:gap-x-[80px]'>
+                {/* ЛЕВАЯ колонка — общие ссылки */}
+                <div className='flex flex-col gap-[8px]'>
+                  <Link
+                    href={frontendRoutes.main}
+                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                  >
+                    Главная страница
+                  </Link>
+                  <Link
+                    href={frontendRoutes.about}
+                    className='max-w-[212px] border-b border-white/30 pb-[8px] lg:border-none'
+                  >
+                    О нас
+                  </Link>
+                </div>
 
-                <div className='hidden lg:block' aria-hidden />
-
-                <Link
-                  href={frontendRoutes.gantry}
-                  className='max-w-[212px] border-b border-white/30 pb-[8px]'
-                >
-                  Гантри
-                </Link>
-
-                <Link
-                  href={frontendRoutes.about}
-                  className='max-w-[212px] border-b border-white/30 pb-[8px] lg:border-none'
-                >
-                  О нас
-                </Link>
-
-                <Link href={frontendRoutes.fitRoller}>Роллер</Link>
+                {/* ПРАВАЯ колонка — продукты */}
+                <div className='flex flex-col gap-[8px]'>
+                  <Link
+                    href={frontendRoutes.unilift}
+                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                  >
+                    Унилифт
+                  </Link>
+                  <Link
+                    href={frontendRoutes.gantry}
+                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                  >
+                    Гантри
+                  </Link>
+                  <Link
+                    href={frontendRoutes.transformer}
+                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                  >
+                    Кресло-Трансформер
+                  </Link>
+                  <Link
+                    href={frontendRoutes.fitRoller}
+                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                  >
+                    Роллер
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

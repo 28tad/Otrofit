@@ -2,11 +2,13 @@ import { Equipment } from '@/app/types/equipment'
 import { fitRoller } from './fitroller'
 import { unilift } from './unilift'
 import { gantry } from './gantry'
+import { transformerChair } from './transformer'
 
 export const EQUIPMENT_KEYS = {
   FITROLLER: 'roller',
   UNILIFT: 'unilift',
   GANTRY: 'gantry',
+  TRANSFORMER: 'transformer',
 } as const
 
 export type EquipmentKey = (typeof EQUIPMENT_KEYS)[keyof typeof EQUIPMENT_KEYS]
@@ -34,5 +36,11 @@ export const equipmentData: Record<EquipmentKey, EquipmentRow> = {
     title: 'Ортофит | Гантри',
     description:
       'Ортофит - Гантри - мобильная П-образная стойка для подъёма пациента из кровати и безопасной пересадки в инвалидную коляску',
+  },
+  [EQUIPMENT_KEYS.TRANSFORMER]: {
+    data: transformerChair,
+    title: 'Ортофит | Кресло-Трансформер',
+    description:
+      'Ортофит - Кресло-трансформер для позиционирования, ухода и безопасного переложения пациента.',
   },
 }

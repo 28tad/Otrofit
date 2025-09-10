@@ -11,6 +11,7 @@ const pages = [
   { title: 'Роллер', href: frontendRoutes.fitRoller },
   { title: 'Унилифт', href: frontendRoutes.unilift },
   { title: 'Гантри', href: frontendRoutes.gantry },
+  { title: 'Кресло-Трансформер', href: frontendRoutes.transformer },
   { title: 'О нас', href: frontendRoutes.about },
 ]
 
@@ -48,9 +49,9 @@ export const BurgerMenu = () => {
 
       <div
         data-open={isOpen}
-        className={`bg-blue fixed top-0 right-0 z-[3] h-0 w-full max-w-[200px] overflow-hidden rounded-bl-[40px] opacity-0 transition-all duration-300 ease-in-out data-[open=true]:h-[284px] data-[open=true]:opacity-100 lg:max-w-[450px]`}
+        className={`bg-blue pointer-events-none fixed top-0 right-0 z-[3] max-h-0 w-full max-w-[200px] overflow-hidden rounded-bl-[40px] opacity-0 transition-[max-height,opacity] duration-300 ease-in-out data-[open=true]:pointer-events-auto data-[open=true]:max-h-[100dvh] data-[open=true]:opacity-100 lg:max-w-[450px]`}
       >
-        <div className='flex flex-col gap-[15px] pt-[71px] pl-[26px] text-white lg:pt-[74px] lg:pl-[40px]'>
+        <div className='flex flex-col gap-[15px] pt-[71px] pb-4 pl-[26px] text-white lg:pt-[74px] lg:pl-[40px]'>
           {pages.map((p) => (
             <Link
               key={p.href}

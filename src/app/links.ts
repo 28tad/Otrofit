@@ -14,5 +14,6 @@ export const frontendRoutes = {
   unilift: `/${EQUIPMENT_KEYS.UNILIFT}`,
   fitRoller: `/${EQUIPMENT_KEYS.FITROLLER}`,
   gantry: `/${EQUIPMENT_KEYS.GANTRY}`,
+  transformer: `/${EQUIPMENT_KEYS.TRANSFORMER}`,
   about: '/about',
 }

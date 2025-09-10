@@ -99,6 +99,7 @@ export default function SectionOS() {
                 options={[
                   { value: 'Ортофит роллер', label: 'Ортофит роллер' },
                   { value: 'Ортофит гантри', label: 'Ортофит гантри' },
+                  { value: 'Ортофит кресло-трансформер', label: 'Ортофит кресло-трансформер' },
                   {
                     label: 'Унилифт',
                     options: uniLiftOptions,

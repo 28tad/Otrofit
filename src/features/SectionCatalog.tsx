@@ -4,6 +4,7 @@ import left_chair from '@/images/left_chair.webp'
 import right_chair from '@/images/right_chair.webp'
 import fitroller from '@/images/fitroller_img.webp'
 import gantry from '@/images/gantry/gantry_catalog.webp'
+import transformer from '@/images/transformer/transformer_catalog.webp'
 import Image from 'next/image'
 import Link from 'next/link'
 import { frontendRoutes } from '@/app/links'
@@ -38,6 +39,12 @@ const items = [
     href: frontendRoutes.gantry,
     img: gantry,
   },
+  {
+    title: 'ортофит кресло-трансформер',
+    description: 'Уход и безопасная пересадка',
+    href: frontendRoutes.transformer,
+    img: transformer,
+  },
 ]
 
 export default function SectionCatalog() {
@@ -52,23 +59,30 @@ export default function SectionCatalog() {
             return (
               <div
                 key={i.title}
-                className='bg-light relative flex h-[272px] w-[155px] shrink-0 flex-col items-center justify-center gap-[18px] rounded-t-[25px] rounded-bl-[25px] pt-[15px] pb-[42px] lg:h-[450px] lg:w-[250px] lg:gap-[23px] lg:rounded-t-[50px] lg:rounded-bl-[50px] lg:px-[45px] lg:py-[44px]'
+                className='bg-light relative flex h-[272px] w-[155px] shrink-0 flex-col items-center gap-[14px] rounded-t-[25px] rounded-bl-[25px] pt-[15px] pb-[42px] lg:h-[450px] lg:w-[250px] lg:gap-[18px] lg:rounded-t-[50px] lg:rounded-bl-[50px] lg:px-[45px] lg:py-[44px]'
               >
-                <Image src={i.img} alt={i.title} className='size-[87px] lg:size-[143px]' />
-                <div className='text-gray text-[16px] font-bold uppercase lg:text-[15px]'>
+                <div className='flex h-[87px] items-end justify-center lg:h-[143px]'>
+                  <Image src={i.img} alt={i.title} className='max-h-full w-auto' />
+                </div>
+
+                <div className='text-gray flex min-h-[40px] items-center justify-center px-2 text-center text-[16px] font-bold uppercase lg:min-h-[46px] lg:text-[15px]'>
                   {i.title}
                 </div>
-                <div className='text-center text-[14px] lg:text-[15px]'>{i.description}</div>
+
+                <div className='flex min-h-[48px] items-center justify-center px-2 text-center text-[14px] lg:min-h-[54px] lg:text-[15px]'>
+                  {i.description}
+                </div>
 
                 <Link
                   href={i.href}
-                  className='bg-blue hidden size-[60px] items-center justify-center rounded-[100%] lg:flex'
+                  className='bg-blue mt-auto hidden size-[60px] items-center justify-center rounded-[100%] lg:flex'
                 >
                   <ArrowRight />
                 </Link>
+
                 <Link
                   href={i.href}
-                  className='bg-blue absolute bottom-[-30px] flex size-[60px] items-center justify-center rounded-[100%] lg:hidden'
+                  className='bg-blue absolute bottom-[-30px] left-1/2 flex size-[60px] -translate-x-1/2 items-center justify-center rounded-[100%] lg:hidden'
                 >
                   <ArrowRight />
                 </Link>
