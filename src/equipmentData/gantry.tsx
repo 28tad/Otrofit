@@ -106,7 +106,7 @@ export const gantry: Equipment = {
     },
     {
       type: 'list',
-      title: 'Преимущества унилифт',
+      title: 'Преимущества гантри',
       listDecimal: true,
       items: [
         <>Произведено в России</>,
