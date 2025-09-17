@@ -98,7 +98,7 @@ export default function SectionOS() {
                 required
                 options={[
                   { value: 'Ортофит роллер', label: 'Ортофит роллер' },
-                  { value: 'Ортофит гантри', label: 'Ортофит гантри' },
+                  { value: 'Ортофит Адъютор', label: 'Ортофит Адъютор' },
                   { value: 'Ортофит кресло-трансформер', label: 'Ортофит кресло-трансформер' },
                   {
                     label: 'Унилифт',

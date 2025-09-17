@@ -4,6 +4,7 @@ import left_chair from '@/images/left_chair.webp'
 import right_chair from '@/images/right_chair.webp'
 import fitroller from '@/images/fitroller_img.webp'
 import gantry from '@/images/gantry/gantry_catalog.webp'
+import gantry_e from '@/images/gantry/gantry_e.webp'
 import transformer from '@/images/transformer/transformer_catalog.webp'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,10 +35,16 @@ const items = [
     img: fitroller,
   },
   {
-    title: 'ортофит гантри',
+    title: 'ортофит Адъютор Механический',
     description: 'Мобильная стойка',
-    href: frontendRoutes.gantry,
+    href: frontendRoutes.gantry_m,
     img: gantry,
+  },
+  {
+    title: 'ортофит Адъютор Электрический',
+    description: 'Мобильная стойка',
+    href: frontendRoutes.gantry_e,
+    img: gantry_e,
   },
   {
     title: 'ортофит кресло-трансформер',
@@ -66,12 +73,12 @@ export default function SectionCatalog() {
                 <Image src={i.img} alt={i.title} className='max-h-full w-auto' />
               </div>
 
-              <div className='text-gray flex min-h-[40px] items-center justify-center px-2 text-center text-[16px] font-bold uppercase lg:min-h-[46px] lg:text-[15px]'>
-                {i.title}
+              <div className='text-gray flex h-[44px] items-center justify-center overflow-hidden px-2 text-center text-[16px] leading-[1.15] font-bold break-words uppercase lg:h-[48px] lg:text-[15px]'>
+                <span> {i.title} </span>
               </div>
 
-              <div className='flex min-h-[48px] items-center justify-center px-2 text-center text-[14px] lg:min-h-[54px] lg:text-[15px]'>
-                {i.description}
+              <div className='flex h-[40px] items-center justify-center overflow-hidden px-2 text-center text-[14px] leading-[1.25] break-words lg:h-[44px] lg:text-[15px]'>
+                <span className='line-clamp-2'>{i.description}</span>
               </div>
 
               <div className='bg-blue pointer-events-none mt-auto hidden size-[60px] items-center justify-center rounded-[100%] lg:flex'>

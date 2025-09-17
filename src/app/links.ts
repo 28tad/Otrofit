@@ -13,7 +13,8 @@ export const frontendRoutes = {
   main: '/',
   unilift: `/${EQUIPMENT_KEYS.UNILIFT}`,
   fitRoller: `/${EQUIPMENT_KEYS.FITROLLER}`,
-  gantry: `/${EQUIPMENT_KEYS.GANTRY}`,
+  gantry_m: `/${EQUIPMENT_KEYS.GANTRY_M}`,
+  gantry_e: `/${EQUIPMENT_KEYS.GANTRY_E}`,
   transformer: `/${EQUIPMENT_KEYS.TRANSFORMER}`,
   about: '/about',
 }

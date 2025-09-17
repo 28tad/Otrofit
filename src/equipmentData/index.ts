@@ -2,12 +2,14 @@ import { Equipment } from '@/app/types/equipment'
 import { fitRoller } from './fitroller'
 import { unilift } from './unilift'
 import { gantry } from './gantry'
+import { adyutorElectric } from './gantry_e'
 import { transformerChair } from './transformer'
 
 export const EQUIPMENT_KEYS = {
   FITROLLER: 'roller',
   UNILIFT: 'unilift',
-  GANTRY: 'gantry',
+  GANTRY_M: 'gantry_m',
+  GANTRY_E: 'gantry_e',
   TRANSFORMER: 'transformer',
 } as const
 
@@ -31,11 +33,17 @@ export const equipmentData: Record<EquipmentKey, EquipmentRow> = {
     description:
       'Ортофит - Унилифт - мобильное подъемное кресло с электроприводом для ухода за лежачими больными. Произведено в России, нагрузка 120 кг, автономная работа от аккумулятора. Используется в медучреждениях и дома: пересадка в коляску, гигиенические процедуры, вертикализация. Доставка по всей России.',
   },
-  [EQUIPMENT_KEYS.GANTRY]: {
+  [EQUIPMENT_KEYS.GANTRY_M]: {
     data: gantry,
-    title: 'Ортофит | Гантри',
+    title: 'Ортофит | Адъютор Механический',
     description:
-      'Ортофит - Гантри - мобильная П-образная стойка для подъёма пациента из кровати и безопасной пересадки в инвалидную коляску',
+      'Ортофит - Адъютор Механический - мобильная П-образная стойка для подъёма пациента из кровати и безопасной пересадки в инвалидную коляску',
+  },
+  [EQUIPMENT_KEYS.GANTRY_E]: {
+    data: adyutorElectric,
+    title: 'Ортофит | Адъютор Электрический',
+    description:
+      'Ортофит - Адъютор Электрический - мобильная П-образная стойка для подъёма пациента из кровати и безопасной пересадки в инвалидную коляску',
   },
   [EQUIPMENT_KEYS.TRANSFORMER]: {
     data: transformerChair,

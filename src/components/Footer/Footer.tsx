@@ -60,10 +60,10 @@ export default function Footer() {
                     Унилифт
                   </Link>
                   <Link
-                    href={frontendRoutes.gantry}
+                    href={frontendRoutes.gantry_m}
                     className='max-w-[212px] border-b border-white/30 pb-[8px]'
                   >
-                    Гантри
+                    Адъютор
                   </Link>
                   <Link
                     href={frontendRoutes.transformer}

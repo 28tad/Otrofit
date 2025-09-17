@@ -1,10 +1,14 @@
 import { Container } from '@/components/Container'
-import fitroller from '@/images/section_catalog_fitroller.webp'
+import fitroller from '@/images/fitroller_main.webp'
 import unilift from '@/images/section_catalog_unilift.webp'
 import unilift_standart from '@/images/unilift_standart.webp'
 import unilift_sanitar from '@/images/unilift_sanitar.webp'
 import unilift_podves from '@/images/unilift_podves.webp'
+import gantry from '@/images/gantry/gantry_main_test.webp'
+import gantry_m from '@/images/gantry/gantry_mech.webp'
+import gantry_e from '@/images/gantry/gantry_elec.webp'
 import Image, { StaticImageData } from 'next/image'
+
 import {
   Carousel,
   CarouselContent,
@@ -89,6 +93,34 @@ const items: ProductItem[] = [
     ],
     mobImg: unilift,
     placement: 'right',
+  },
+  {
+    title: 'ортофит Адъютор',
+    blueTitle: 'Средство для перемещения',
+    subtitle: '',
+    description: (
+      <>
+        <span className='font-bold'>Адъютор</span> — свободностоящая П-образная стойка для
+        безопасного подъёма и перемещения с точной подачей по каретке верхней балки; позволяет
+        работать одному оператору. Версии: механическая и электрическая; полностью разборная, есть
+        сумка-кофр.
+      </>
+    ),
+    img: gantry,
+    caruselItems: [
+      {
+        img: gantry_m,
+        title: 'Адъютор Механический',
+        price: 'ОТ 2 000 000 ₽',
+      },
+      {
+        img: gantry_e,
+        title: 'Адъютор Электро',
+        price: 'ОТ 2 000 000 ₽',
+      },
+    ],
+    // mobImg: adyutor,
+    placement: 'left',
   },
 ]
 

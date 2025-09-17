@@ -8,7 +8,7 @@ import gantry_6 from '@/images/gantry/gantry_6.webp'
 import gantry_7 from '@/images/gantry/gantry_7.webp'
 
 export const gantry: Equipment = {
-  title: 'ОРТОФИТ ГАНТРИ',
+  title: 'ОРТОФИТ Адъютор Механический',
   blocks: [
     {
       type: 'slider',
@@ -25,31 +25,31 @@ export const gantry: Equipment = {
       images: [
         {
           url: gantry_1,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
         {
           url: gantry_2,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
         {
           url: gantry_3,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
         {
           url: gantry_4,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
         {
           url: gantry_5,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
         {
           url: gantry_6,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
         {
           url: gantry_7,
-          alt: 'Гантри',
+          alt: 'Адъютор',
         },
       ],
       list: {
@@ -67,9 +67,9 @@ export const gantry: Equipment = {
       title: 'описание',
       content: (
         <>
-          <b>ОРТОФИТ ГАНТРИ</b> — свободно стоящая П-образная стойка, которая устанавливается над
-          кроватью и позволяет одному оператору выполнить подъём и пересадку пациента в
-          коляску/кресло-туалет.
+          <b>ОРТОФИТ Адъютор Механический</b> — свободно стоящая П-образная стойка, которая
+          устанавливается над кроватью и позволяет одному оператору выполнить подъём и пересадку
+          пациента в коляску/кресло-туалет.
         </>
       ),
     },
@@ -106,7 +106,7 @@ export const gantry: Equipment = {
     },
     {
       type: 'list',
-      title: 'Преимущества гантри',
+      title: 'Преимущества Адъютор',
       listDecimal: true,
       items: [
         <>Произведено в России</>,
