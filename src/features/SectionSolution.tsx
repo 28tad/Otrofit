@@ -115,7 +115,7 @@ const items: ProductItem[] = [
       },
       {
         img: gantry_e,
-        title: 'Адъютор Электро',
+        title: 'Адъютор Электрический',
         price: 'ОТ 2 000 000 ₽',
       },
     ],
