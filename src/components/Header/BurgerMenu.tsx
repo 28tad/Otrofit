@@ -10,7 +10,8 @@ const pages = [
   { title: 'Главная', href: frontendRoutes.main },
   { title: 'Роллер', href: frontendRoutes.fitRoller },
   { title: 'Унилифт', href: frontendRoutes.unilift },
-  { title: 'Адъютор', href: frontendRoutes.gantry_m },
+  { title: 'Ассистент', href: frontendRoutes.gantry_m },
+  { title: 'Ассистент Электра', href: frontendRoutes.gantry_e },
   { title: 'Кресло-Трансформер', href: frontendRoutes.transformer },
   { title: 'О нас', href: frontendRoutes.about },
 ]

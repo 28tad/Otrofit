@@ -63,7 +63,7 @@ export default function Footer() {
                     href={frontendRoutes.gantry_m}
                     className='max-w-[212px] border-b border-white/30 pb-[8px]'
                   >
-                    Адъютор
+                    Ассистент
                   </Link>
                   <Link
                     href={frontendRoutes.transformer}

@@ -35,13 +35,13 @@ const items = [
     img: fitroller,
   },
   {
-    title: 'ортофит Адъютор Механический',
+    title: 'Ортофит Ассистент',
     description: 'Мобильная стойка',
     href: frontendRoutes.gantry_m,
     img: gantry,
   },
   {
-    title: 'ортофит Адъютор Электрический',
+    title: 'Ортофит Ассистент Электра',
     description: 'Мобильная стойка',
     href: frontendRoutes.gantry_e,
     img: gantry_e,
