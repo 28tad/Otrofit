@@ -18,3 +18,11 @@ export const frontendRoutes = {
   transformer: `/${EQUIPMENT_KEYS.TRANSFORMER}`,
   about: '/about',
 }
+
+export const catalogItemsDTO = [
+  { title: 'Роллер', href: frontendRoutes.fitRoller },
+  { title: 'Унилифт', href: frontendRoutes.unilift },
+  { title: 'Ассистент', href: frontendRoutes.gantry_m },
+  { title: 'Ассистент Электра', href: frontendRoutes.gantry_e },
+  { title: 'Кресло-Трансформер', href: frontendRoutes.transformer },
+]

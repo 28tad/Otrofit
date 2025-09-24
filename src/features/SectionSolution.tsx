@@ -16,7 +16,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import ConnectUsButton from '@/components/ConnectUsButton'
+import Link from 'next/link'
+import { frontendRoutes } from '@/app/links'
 
 const steps = [
   'Мы разрабатываем и поставляем продукцию, которая помогает улучшить качество жизни независимо от возраста и физических возможностей',
@@ -26,6 +27,7 @@ const steps = [
 interface CaruselItem {
   img: StaticImageData
   title: string
+  link: string
   price: string
   id?: string
 }
@@ -55,6 +57,14 @@ const items: ProductItem[] = [
       </>
     ),
     img: fitroller,
+    caruselItems: [
+      {
+        img: gantry_m,
+        title: 'роллер',
+        price: 'ОТ 2 000 000 ₽',
+        link: frontendRoutes.gantry_m,
+      },
+    ],
     placement: 'left',
   },
   {
@@ -73,21 +83,25 @@ const items: ProductItem[] = [
       {
         img: unilift_standart,
         title: 'Унилифт Стандарт',
+        link: frontendRoutes.unilift,
         price: 'ОТ 2 000 000 ₽',
       },
       {
         img: unilift_podves,
         title: 'Унилифт Электро',
+        link: frontendRoutes.unilift,
         price: 'ОТ 2 000 000 ₽',
       },
       {
         img: unilift_sanitar,
         title: 'Унилифт Санитар',
+        link: frontendRoutes.unilift,
         price: 'ОТ 2 000 000 ₽',
       },
       {
         img: unilift_podves,
         title: 'Унилифт Подвес',
+        link: frontendRoutes.unilift,
         price: 'ОТ 2 000 000 ₽',
       },
     ],
@@ -112,11 +126,13 @@ const items: ProductItem[] = [
         img: gantry_m,
         title: 'Ортофит Ассистент',
         price: 'ОТ 2 000 000 ₽',
+        link: frontendRoutes.gantry_m,
       },
       {
         img: gantry_e,
         title: 'Ортофит Ассистент Электра',
         price: 'ОТ 2 000 000 ₽',
+        link: frontendRoutes.gantry_e,
       },
     ],
     // mobImg: adyutor,
@@ -171,10 +187,12 @@ const Card = (item: ProductItem) => {
                       <div className='text-gray text-[18px] font-bold uppercase lg:text-[20px]'>
                         {c.title}
                       </div>
-                      {/* <div className='text-blue text-[18px] font-bold italic lg:text-[26px]'>
-                        {c.price}
-                      </div> */}
-                      <ConnectUsButton className='hidden lg:flex' />
+                      <Link
+                        href={c.link || ''}
+                        className={`bg-blue flex h-[60px] w-full items-center justify-center rounded-[18px] font-bold text-white uppercase lg:w-[240px] lg:rounded-[28px]`}
+                      >
+                        Подробнее
+                      </Link>
                     </div>
                   </CarouselItem>
                 ))}

@@ -1,4 +1,4 @@
-function getVideoIdFromLink(link: string) {
+export function getVideoIdFromLink(link: string) {
   const match = link.match(/\/video\/([a-f0-9]+)/)
   return match ? match[1] : ''
 }

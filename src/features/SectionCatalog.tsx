@@ -73,7 +73,7 @@ export default function SectionCatalog() {
                 <Image src={i.img} alt={i.title} className='max-h-full w-auto' />
               </div>
 
-              <div className='text-gray flex h-[44px] items-center justify-center overflow-hidden px-2 text-center text-[16px] leading-[1.15] font-bold break-words uppercase lg:h-[48px] lg:text-[15px]'>
+              <div className='text-gray flex h-[64px] items-center justify-center overflow-hidden px-2 text-center text-[16px] leading-[1.15] font-bold break-words uppercase lg:h-[48px] lg:text-[15px]'>
                 <span> {i.title} </span>
               </div>
 

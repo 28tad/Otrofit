@@ -1,6 +1,6 @@
 import { Logo } from '@/icons/Logo'
 import { Container } from '../Container'
-import { contacts, frontendRoutes } from '@/app/links'
+import { catalogItemsDTO, contacts, frontendRoutes } from '@/app/links'
 import { PhoneIcon } from '@/icons/PhoneIcon'
 import { MailIcon } from '@/icons/MailIcon'
 import Link from 'next/link'
@@ -53,30 +53,21 @@ export default function Footer() {
 
                 {/* ПРАВАЯ колонка — продукты */}
                 <div className='flex flex-col gap-[8px]'>
-                  <Link
-                    href={frontendRoutes.unilift}
-                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
-                  >
-                    Унилифт
-                  </Link>
-                  <Link
-                    href={frontendRoutes.gantry_m}
-                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
-                  >
-                    Ассистент
-                  </Link>
-                  <Link
-                    href={frontendRoutes.transformer}
-                    className='max-w-[212px] border-b border-white/30 pb-[8px]'
-                  >
-                    Кресло-Трансформер
-                  </Link>
-                  <Link
+                  {catalogItemsDTO.map((item) => (
+                    <Link
+                      href={item.href}
+                      className='max-w-[212px] border-b border-white/30 pb-[8px]'
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+
+                  {/* <Link
                     href={frontendRoutes.fitRoller}
                     className='max-w-[212px] border-b border-white/30 pb-[8px]'
                   >
                     Роллер
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>

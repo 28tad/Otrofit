@@ -1,7 +1,16 @@
 import { StaticImageData } from 'next/image'
 import { ReactElement, ReactNode } from 'react'
 
-type BLOCK_TYPES = 'paragraph' | 'slider' | 'story' | 'list' | 'configuration' | 'image' | 'video'
+type BLOCK_TYPES =
+  | 'paragraph'
+  | 'slider'
+  | 'story'
+  | 'list'
+  | 'configuration'
+  | 'image'
+  | 'video'
+  | 'columns'
+  | 'verticalVideo'
 
 export interface SliderBlock extends BaseBlock {
   type: 'slider'
@@ -35,8 +44,14 @@ interface ListBlock extends BaseBlock {
   items: string[] | ReactNode[]
   listDecimal?: boolean
 }
+
 interface VideoBlock extends BaseBlock {
   type: 'video'
+  videoLink?: string
+}
+
+interface VerticalVideoBlock extends BaseBlock {
+  type: 'verticalVideo'
   videoLink?: string
 }
 
@@ -58,6 +73,12 @@ export interface Configuration {
   }
 }
 
+export interface ColumnBlock extends BaseBlock {
+  type: 'columns'
+  left: Block[]
+  right: Block | Block[]
+}
+
 export interface ConfigurationBlock extends BaseBlock {
   type: 'configuration'
   configurations: Configuration[]
@@ -71,6 +92,8 @@ export type Block =
   | ConfigurationBlock
   | ImageBlock
   | VideoBlock
+  | ColumnBlock
+  | VerticalVideoBlock
 
 export interface Equipment {
   title: string

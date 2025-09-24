@@ -176,6 +176,7 @@ function CarouselPrevious({
       size={size}
       className={cn(
         'absolute size-8 rounded-full',
+        !canScrollPrev && 'hidden',
         orientation === 'horizontal'
           ? 'top-1/2 -left-[40px] -translate-y-1/2 lg:-left-[60px]'
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
@@ -206,6 +207,7 @@ function CarouselNext({
       size={size}
       className={cn(
         'absolute size-8 rounded-full',
+        !canScrollNext && 'hidden',
         orientation === 'horizontal'
           ? 'top-1/2 -right-[40px] -translate-y-1/2 lg:-right-[60px]'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
