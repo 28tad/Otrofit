@@ -145,11 +145,14 @@ export const unilift: Equipment = {
           ),
         },
       ],
-      right: {
+
+      right: [
         // TODO: Добавить актуальную ссылку на видео
-        // type: 'verticalVideo',
-        // videoLink: 'https://rutube.ru/video/32a7df2da889e276f6f25d7d41a98ea9/',
-      },
+        // {
+        //   type: 'verticalVideo',
+        //   videoLink: 'https://rutube.ru/video/32a7df2da889e276f6f25d7d41a98ea9/',
+        // },
+      ],
     },
     {
       type: 'list',

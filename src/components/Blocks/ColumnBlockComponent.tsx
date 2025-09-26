@@ -6,9 +6,18 @@ interface Props {
 }
 
 export const ColumnBlockComponent = ({ block }: Props) => {
+  if (!block.right || (Array.isArray(block.right) && block.right.length === 0)) {
+    return (
+      <div className='flex flex-col justify-between gap-[30px]'>
+        {block.left.map((b, i) => (
+          <Constructor key={b.id || i} block={b} />
+        ))}
+      </div>
+    )
+  }
   return (
     <div className='my-[60px] flex flex-col gap-[60px] lg:flex-row'>
-      <div className='flex flex-col justify-between gap-[16px]'>
+      <div className='flex flex-col justify-between gap-[30px]'>
         {block.left.map((b, i) => (
           <Constructor key={b.id || i} block={b} />
         ))}
