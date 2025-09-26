@@ -1,3 +1,4 @@
+'use client'
 import { Container } from '@/components/Container'
 import fitroller from '@/images/fitroller_main.webp'
 import unilift from '@/images/section_catalog_unilift.webp'
@@ -7,10 +8,11 @@ import unilift_podves from '@/images/unilift_podves.webp'
 import gantry from '@/images/gantry/gantry_main.webp'
 import gantry_m from '@/images/gantry/gantry_mech.webp'
 import gantry_e from '@/images/gantry/gantry_elec.webp'
+import roller from '@/images/roller_slider_3.webp'
 import Image, { StaticImageData } from 'next/image'
-
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -18,6 +20,8 @@ import {
 } from '@/components/ui/carousel'
 import Link from 'next/link'
 import { frontendRoutes } from '@/app/links'
+import { useEffect, useState } from 'react'
+import { ButtonCallUs } from '@/components/ConnectUsButton'
 
 const steps = [
   'Мы разрабатываем и поставляем продукцию, которая помогает улучшить качество жизни независимо от возраста и физических возможностей',
@@ -38,7 +42,7 @@ interface ProductItem {
   blueTitle: string
   description: React.ReactNode
   img: StaticImageData
-  caruselItems?: CaruselItem[]
+  caruselItems: CaruselItem[]
   mobImg?: StaticImageData
   placement: 'left' | 'right'
 }
@@ -59,10 +63,10 @@ const items: ProductItem[] = [
     img: fitroller,
     caruselItems: [
       {
-        img: gantry_m,
+        img: roller,
         title: 'роллер',
         price: 'ОТ 2 000 000 ₽',
-        link: frontendRoutes.gantry_m,
+        link: frontendRoutes.fitRoller,
       },
     ],
     placement: 'left',
@@ -141,6 +145,19 @@ const items: ProductItem[] = [
 ]
 
 const Card = (item: ProductItem) => {
+  const [api, setApi] = useState<CarouselApi | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
+
+  useEffect(() => {
+    if (!api) return
+    const handler = () => setActiveIndex(api.selectedScrollSnap())
+    handler()
+    api.on('select', handler)
+    return () => {
+      api.off('select', handler)
+    }
+  }, [api])
+
   return (
     <>
       <div className='mx-auto my-[60px] block w-full max-w-[560px] lg:hidden'>
@@ -170,37 +187,51 @@ const Card = (item: ProductItem) => {
           <div className='mt-[16px] ml-[25px] text-[14px] leading-[100%] font-light lg:mt-[30px] lg:ml-0 lg:text-[18px]'>
             {item.description}
           </div>
-          {item.caruselItems && (
-            <Carousel
-              className='mt-[45px] ml-[25px] w-[281px] lg:ml-[43px] lg:w-[430px]'
-              opts={{ loop: true }}
-            >
-              <CarouselContent>
-                {item.caruselItems.map((c, index) => (
-                  <CarouselItem className='flex gap-[30px]' key={c.title + index}>
-                    <Image
-                      alt={c.title}
-                      src={c.img}
-                      className='size-[100px] rounded-tl-[25px] lg:size-[160px]'
-                    />
-                    <div className='flex flex-col justify-around lg:justify-between'>
-                      <div className='text-gray text-[18px] font-bold uppercase lg:text-[20px]'>
-                        {c.title}
-                      </div>
+
+          <Carousel
+            className='mt-[16px] ml-[25px] w-[281px] lg:mt-[45px] lg:ml-[43px] lg:w-[430px]'
+            opts={{ loop: true }}
+            setApi={setApi}
+          >
+            <CarouselContent>
+              {item.caruselItems.map((c, index) => (
+                <CarouselItem className='flex gap-[30px]' key={c.title + index}>
+                  <Image
+                    alt={c.title}
+                    src={c.img}
+                    className='size-[100px] rounded-tl-[25px] lg:size-[160px]'
+                  />
+                  <div className='flex flex-col justify-around lg:justify-between'>
+                    <div className='text-gray text-[18px] font-bold uppercase lg:text-[20px]'>
+                      {c.title}
+                    </div>
+
+                    <div className='mt-[16px] hidden items-center gap-[10px] lg:flex'>
                       <Link
                         href={c.link || ''}
-                        className={`bg-blue flex h-[60px] w-full items-center justify-center rounded-[18px] font-bold text-white uppercase lg:w-[240px] lg:rounded-[28px]`}
+                        className='bg-blue flex h-[60px] w-[170px] items-center justify-center rounded-[28px] font-bold text-white uppercase'
                       >
                         Подробнее
                       </Link>
+                      <ButtonCallUs />
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          )}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+
+          <div className='mt-[16px] flex items-center gap-[10px] lg:hidden'>
+            <Link
+              href={item.caruselItems[activeIndex]?.link || ''}
+              className='bg-blue flex h-[60px] w-full items-center justify-center rounded-[28px] font-bold text-white uppercase'
+            >
+              Подробнее
+            </Link>
+            <ButtonCallUs />
+          </div>
         </div>
 
         {item.placement === 'right' && (
@@ -208,10 +239,6 @@ const Card = (item: ProductItem) => {
             <Image src={item.img} alt='fitroller_img' />
           </div>
         )}
-
-        {/* <button className='bg-blue mt-[16px] block h-[60px] w-full rounded-[18px] font-bold text-white uppercase lg:hidden'>
-          ознакомиться
-        </button> */}
       </Container>
     </>
   )

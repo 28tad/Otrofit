@@ -76,7 +76,7 @@ export interface Configuration {
 export interface ColumnBlock extends BaseBlock {
   type: 'columns'
   left: Block[]
-  right: Block | Block[]
+  right: Block | Block[] | unknown
 }
 
 export interface ConfigurationBlock extends BaseBlock {

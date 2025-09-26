@@ -20,7 +20,7 @@ export default function Footer() {
               <div className='text-blue text-[20px] font-bold uppercase'>контакты</div>
               <div className='mt-[8px] text-white lg:mt-[18px]'>
                 <div className='flex items-center gap-[11px]'>
-                  <PhoneIcon />
+                  <PhoneIcon className='text-[#6169FF]' />
                   {contacts.number}
                 </div>
                 <div className='flex items-center gap-[11px]'>
